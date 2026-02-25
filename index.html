@@ -54,26 +54,26 @@
 
             <!-- Desktop Links -->
             <div class="hidden md:flex items-center gap-8">
-                <a href="#about" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">About</a>
-                <a href="#services" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Services</a>
-                <a href="#portfolio" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Work</a>
-                <a href="#contact" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Contact</a>
+                <a href="#about" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors" data-en="About" data-vi="Giới thiệu">About</a>
+                <a href="#services" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors" data-en="Services" data-vi="Dịch vụ">Services</a>
+                <a href="#portfolio" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors" data-en="Work" data-vi="Dự án">Work</a>
+                <a href="#contact" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors" data-en="Contact" data-vi="Liên hệ">Contact</a>
             </div>
 
             <!-- Controls (Lang, Theme, CTA) -->
             <div class="flex items-center gap-4">
                 <!-- Custom Lang Toggle (Visual) -->
                 <div class="hidden sm:flex items-center bg-gray-50 border border-gray-200 rounded-full p-1">
-                    <button class="px-3 py-1 rounded-full bg-white shadow-sm text-xs font-medium text-gray-900">EN</button>
-                    <button class="px-3 py-1 rounded-full text-xs font-medium text-gray-500 hover:text-gray-900 transition-colors">VI</button>
+                    <button id="btn-en" onclick="setLang('en')" class="px-3 py-1 rounded-full bg-white shadow-sm text-xs font-medium text-gray-900 transition-all">EN</button>
+                    <button id="btn-vi" onclick="setLang('vi')" class="px-3 py-1 rounded-full text-xs font-medium text-gray-500 hover:text-gray-900 transition-all">VI</button>
                 </div>
 
                 <!-- Custom Theme Toggle (Visual) -->
-                <button class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">
-                    <iconify-icon icon="solar:sun-linear" class="text-lg"></iconify-icon>
+                <button id="theme-btn" onclick="toggleTheme()" class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">
+                    <iconify-icon id="theme-icon" icon="solar:sun-linear" class="text-lg"></iconify-icon>
                 </button>
 
-                <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-full hover:bg-gray-800 transition-colors">
+                <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-full hover:bg-gray-800 transition-colors" data-en="Get a Quote" data-vi="Nhận báo giá">
                     Get a Quote
                 </a>
                 
@@ -90,15 +90,15 @@
         <div class="max-w-4xl mx-auto px-6 text-center z-10">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-medium mb-8">
                 <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-                Available for new projects
+                <span data-en="Available for new projects" data-vi="Đang nhận dự án mới">Available for new projects</span>
             </div>
             
             <h1 class="md:text-6xl lg:text-7xl leading-tight text-4xl font-semibold text-gray-900 tracking-tight mb-6">
-                We Design Modern Websites <br class="hidden md:block"> That Grow Your Business
+                <span data-en="We Design Modern Websites" data-vi="Chúng Tôi Thiết Kế Website">We Design Modern Websites</span> <br class="hidden md:block"> <span data-en="That Grow Your Business" data-vi="Giúp Phát Triển Doanh Nghiệp">That Grow Your Business</span>
             </h1>
             
             <p class="text-base md:text-lg text-gray-500 mb-10 max-w-2xl mx-auto font-light">
-                <span class="block mb-2">Creating clean, fast, and user-centric digital experiences for startups and businesses.</span>
+                <span class="block mb-2" data-en="Creating clean, fast, and user-centric digital experiences for startups and businesses." data-vi="Tạo ra trải nghiệm số hiện đại, nhanh, tập trung vào người dùng cho doanh nghiệp.">Creating clean, fast, and user-centric digital experiences for startups and businesses.</span>
                 <span class="block text-sm text-gray-400 italic">Chúng tôi thiết kế website hiện đại giúp phát triển doanh nghiệp của bạn.</span>
             </p>
             
@@ -345,9 +345,9 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
                 <!-- Contact Info -->
                 <div class="">
-                    <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight text-gray-900 mb-4">Start Your Project Today</h2>
+                    <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight text-gray-900 mb-4"><span data-en="Start Your Project Today" data-vi="Bắt Đầu Dự Án Ngay">Start Your Project Today</span></h2>
                     <p class="text-base text-gray-500 font-light mb-8 max-w-md">
-                        Have an idea? Let's build something great together. Fill out the form or reach out directly.
+                        <span data-en="Have an idea? Let's build something great together. Fill out the form or reach out directly." data-vi="Có ý tưởng? Hãy liên hệ với chúng tôi. Điền form hoặc nhắn tin trực tiếp.">Have an idea? Let's build something great together. Fill out the form or reach out directly.</span>
                         <br>
                         <span class="text-sm italic text-gray-400 mt-2 block">Bắt đầu dự án của bạn ngay hôm nay. Vui lòng để lại thông tin liên hệ.</span>
                     </p>
@@ -496,7 +496,7 @@
                         </div>
 
                         <button type="button" id="submitBtn" onclick="submitToGoogleForms()" class="w-full px-6 py-3 text-sm font-medium text-white bg-gray-900 rounded-xl hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 mt-2">
-                            <span id="btnText">Send Message</span>
+                            <span id="btnText" data-en="Send Message" data-vi="Gửi tin nhắn">Send Message</span>
                             <iconify-icon icon="solar:plain-linear"></iconify-icon>
                         </button>
                     </form>
