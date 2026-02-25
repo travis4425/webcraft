@@ -1,551 +1,853 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WebCraft Studio – Modern Web Design Agency</title>
-  <meta name="description" content="WebCraft Studio – We design modern websites that grow your business. UI/UX Design, Website Design, Full-Stack Development in Vietnam."/>
-  <meta name="keywords" content="web design, UI/UX, full-stack development, website Vietnam, thiết kế website"/>
-  <meta property="og:title" content="WebCraft Studio"/>
-  <meta property="og:description" content="Modern website design & development agency based in Vietnam."/>
-  <meta property="og:url" content="https://webcraft.id.vn"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0;}
-    html{scroll-behavior:smooth;}
-    body{font-family:'Sora',sans-serif;}
-    ::-webkit-scrollbar{width:5px;}
-    ::-webkit-scrollbar-thumb{background:#3B82F6;border-radius:3px;}
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
-    @keyframes float2{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-    @keyframes gshift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-    .fl{animation:float 6s ease-in-out infinite;}
-    .fl2{animation:float2 8s ease-in-out 1.5s infinite;}
-    .gt{background:linear-gradient(135deg,#60A5FA,#38BDF8,#818CF8);background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gshift 4s ease infinite;}
-    .mesh{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;}
-    .btn-p{background:linear-gradient(135deg,#3B82F6,#06B6D4);color:#fff;border:none;padding:14px 30px;border-radius:12px;font-family:'Sora',sans-serif;font-weight:600;font-size:15px;cursor:pointer;transition:all .3s;letter-spacing:.2px;}
-    .btn-p:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(59,130,246,.4);}
-    .ch{transition:all .4s cubic-bezier(.16,1,.3,1);}
-    .ch:hover{transform:translateY(-7px);box-shadow:0 28px 56px rgba(0,0,0,.3);}
-    @media(max-width:900px){
-      .d-nav{display:none !important;}
-      .hbg{display:flex !important;}
-      .two-col{grid-template-columns:1fr !important;}
-      .three-col{grid-template-columns:1fr !important;}
-    }
-    @media(max-width:600px){
-      .hero-grid{grid-template-columns:1fr !important;}
-      .hero-visual{display:none !important;}
-      .form-row{grid-template-columns:1fr !important;}
-    }
-  </style>
-</head>
-<body>
-<div id="root"></div>
-<script type="text/babel">
-const { useState, useEffect, useRef } = React;
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebCraft Studio | Web Design &amp; Development</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #ffffff;
+      }
 
-const DOMAIN = "webcraft.id.vn";
-const SITE_URL = "https://" + DOMAIN;
+      /* Subtle mesh/gradient background for hero */
+      .hero-bg {
+        background-image:
+          radial-gradient(
+            at 0% 0%,
+            hsla(217, 100%, 95%, 1) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 100% 0%,
+            hsla(210, 100%, 97%, 1) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 100% 100%,
+            hsla(217, 100%, 95%, 0.5) 0px,
+            transparent 50%
+          );
+      }
 
-const T = {
-  en: {
-    nav: { home:"Home", about:"About", services:"Services", portfolio:"Portfolio", contact:"Contact", getQuote:"Get a Quote" },
-    hero: {
-      badge:"✦ Modern Web Agency",
-      h1a:"We Design Modern",
-      h1b:"Websites That Grow",
-      h1c:"Your Business",
-      sub:"WebCraft Studio crafts beautiful, high-performance websites and digital experiences for startups and businesses across Vietnam and beyond.",
-      cta1:"View Portfolio", cta2:"Get a Quote",
-      stat1:"Projects Delivered", stat2:"Happy Clients", stat3:"Years Experience",
-      domain:"🌐 " + DOMAIN,
-    },
-    about: {
-      badge:"Our Team", h2:"Three Minds. One Studio.",
-      sub:"We're a tight-knit trio of designers and developers who believe great websites are born from the intersection of art and engineering.",
-      mission:"Our Mission", missionText:"To empower businesses with world-class digital presence — built fast, designed beautifully, and engineered to last.",
-      vision:"Our Vision", visionText:"To become Vietnam's most trusted boutique web agency, where every pixel and every line of code serves a purpose.",
-      members:[
-        { name:"Minh Anh", role:"UI/UX Designer", bio:"Passionate about crafting intuitive interfaces that delight users. 4 years of Figma, Adobe XD and design systems.", skills:["Figma","Adobe XD","Motion Design","Prototyping","Design Systems"] },
-        { name:"Tuấn Kiệt", role:"Frontend Developer", bio:"React enthusiast with a sharp eye for pixel-perfect implementation. Turns designs into fast, accessible web experiences.", skills:["React","Next.js","TailwindCSS","TypeScript","Framer Motion"] },
-        { name:"Phương Linh", role:"Backend Developer", bio:"Architect of robust APIs and scalable systems. Loves clean code and databases that never sleep.", skills:["Node.js","Express","SQL Server","PostgreSQL","AWS"] },
-      ],
-    },
-    services: {
-      badge:"What We Do", h2:"Services Built for Growth",
-      sub:"From concept to launch — we cover every layer of your digital product.",
-      list:[
-        { icon:"🎨", title:"UI/UX Design", desc:"Research-driven, user-centered design that converts visitors into customers.", price:["$299","$599","$999"] },
-        { icon:"💻", title:"Website Design", desc:"Custom, responsive websites that reflect your brand identity and leave a lasting impression.", price:["$499","$999","$1,799"] },
-        { icon:"⚙️", title:"Full-Stack Development", desc:"End-to-end web apps built on modern stacks — React, Node.js, databases, APIs and cloud.", price:["$999","$2,499","$4,999"] },
-        { icon:"🛡️", title:"Maintenance & Support", desc:"Post-launch care: hosting management, updates, security patches and performance monitoring.", price:["$49/mo","$99/mo","$199/mo"] },
-      ],
-      plans:["Basic","Standard","Premium"],
-    },
-    portfolio: {
-      badge:"Our Work", h2:"Projects We're Proud Of",
-      sub:"A curated selection of work spanning startups, enterprises and non-profits.",
-      filters:["All","React","Node.js","UI/UX","E-Commerce"],
-      projects:[
-        { title:"FloodRescue Platform", cat:"React", tags:["React","Node.js","Socket.io","SQL Server"], desc:"Real-time flood rescue coordination system with GPS tracking and live dashboards.", img:"🌊" },
-        { title:"LuxeShop E-Commerce", cat:"E-Commerce", tags:["Next.js","Stripe","PostgreSQL","TailwindCSS"], desc:"Full-featured online store with payment integration and analytics dashboard.", img:"🛍️" },
-        { title:"MediBook Clinic App", cat:"UI/UX", tags:["Figma","React","Node.js","MongoDB"], desc:"Patient appointment booking system for a chain of 12 clinics.", img:"🏥" },
-        { title:"EduLearn LMS", cat:"React", tags:["React","Django","PostgreSQL","AWS S3"], desc:"Learning management system supporting 10,000+ students with video streaming.", img:"📚" },
-        { title:"LogiTrack Dashboard", cat:"Node.js", tags:["Vue.js","Node.js","MySQL","Docker"], desc:"Real-time logistics and fleet tracking dashboard with advanced analytics.", img:"🚚" },
-        { title:"ArtisanBrew Brand Site", cat:"UI/UX", tags:["Figma","Webflow","GSAP"], desc:"Brand identity and website for a premium craft brewery with rich animations.", img:"🍺" },
-      ],
-    },
-    testimonials: {
-      badge:"Client Love", h2:"What Our Clients Say",
-      list:[
-        { name:"Nguyễn Văn An", role:"CEO, TechViet Solutions", text:"WebCraft Studio delivered our platform 2 weeks ahead of schedule. The code quality and design exceeded every expectation.", rating:5 },
-        { name:"Sarah Mitchell", role:"Founder, Bloom Agency", text:"Working with this team was effortless. They understood our vision immediately and delivered something even better.", rating:5 },
-        { name:"Trần Thị Mai", role:"Marketing Director, FoodChain VN", text:"Our new website increased conversions by 40% in the first month. The UI/UX work is exceptional.", rating:5 },
-      ],
-    },
-    contact: {
-      badge:"Let's Build Together", h2:"Start Your Project Today",
-      sub:"Tell us about your vision. We'll get back to you within 24 hours.",
-      name:"Your Name", email:"Email Address", project:"Project Type", msg:"Tell us about your project...",
-      send:"Send Message", sending:"Sending...", sent:"Message sent! We'll be in touch soon. 🎉",
-      info:["hello@webcraft.id.vn","+84 (0) 123 456 789","Ho Chi Minh City, Vietnam"],
-    },
-    footer: { copy:"© 2025 WebCraft Studio · webcraft.id.vn · Crafted with ❤️ in Vietnam." },
-  },
-  vi: {
-    nav: { home:"Trang chủ", about:"Về chúng tôi", services:"Dịch vụ", portfolio:"Dự án", contact:"Liên hệ", getQuote:"Nhận báo giá" },
-    hero: {
-      badge:"✦ Studio thiết kế web hiện đại",
-      h1a:"Thiết Kế Website",
-      h1b:"Hiện Đại Giúp",
-      h1c:"Doanh Nghiệp Bứt Phá",
-      sub:"WebCraft Studio tạo ra những website đẹp, hiệu suất cao cho startup và doanh nghiệp tại Việt Nam và quốc tế.",
-      cta1:"Xem Dự Án", cta2:"Nhận Báo Giá",
-      stat1:"Dự án hoàn thành", stat2:"Khách hàng hài lòng", stat3:"Năm kinh nghiệm",
-      domain:"🌐 " + DOMAIN,
-    },
-    about: {
-      badge:"Đội ngũ của chúng tôi", h2:"Ba Cá Nhân. Một Studio.",
-      sub:"Chúng tôi là bộ ba nhà thiết kế và lập trình viên tin rằng website tuyệt vời được tạo ra từ giao điểm của nghệ thuật và kỹ thuật.",
-      mission:"Sứ Mệnh", missionText:"Trao quyền cho doanh nghiệp với sự hiện diện kỹ thuật số đẳng cấp thế giới — nhanh, đẹp và bền vững.",
-      vision:"Tầm Nhìn", visionText:"Trở thành studio web boutique đáng tin cậy nhất Việt Nam, nơi mỗi pixel và mỗi dòng code đều có mục đích.",
-      members:[
-        { name:"Minh Anh", role:"Nhà thiết kế UI/UX", bio:"Đam mê tạo ra giao diện trực quan. 4 năm kinh nghiệm với Figma và hệ thống thiết kế.", skills:["Figma","Adobe XD","Motion Design","Prototyping","Design Systems"] },
-        { name:"Tuấn Kiệt", role:"Lập trình viên Frontend", bio:"Chuyên gia React với con mắt tinh tường. Biến thiết kế thành trải nghiệm web nhanh và đẹp.", skills:["React","Next.js","TailwindCSS","TypeScript","Framer Motion"] },
-        { name:"Phương Linh", role:"Lập trình viên Backend", bio:"Kiến trúc sư của các API mạnh mẽ. Yêu thích code sạch và cơ sở dữ liệu ổn định.", skills:["Node.js","Express","SQL Server","PostgreSQL","AWS"] },
-      ],
-    },
-    services: {
-      badge:"Dịch vụ của chúng tôi", h2:"Dịch Vụ Kiến Tạo Tăng Trưởng",
-      sub:"Từ ý tưởng đến ra mắt — chúng tôi bao phủ mọi tầng của sản phẩm kỹ thuật số.",
-      list:[
-        { icon:"🎨", title:"Thiết kế UI/UX", desc:"Thiết kế lấy người dùng làm trung tâm, giúp chuyển đổi khách truy cập thành khách hàng.", price:["7.500.000₫","15.000.000₫","25.000.000₫"] },
-        { icon:"💻", title:"Thiết kế Website", desc:"Website tùy chỉnh, responsive phản ánh bản sắc thương hiệu và để lại ấn tượng lâu dài.", price:["12.000.000₫","24.000.000₫","45.000.000₫"] },
-        { icon:"⚙️", title:"Lập trình Full-Stack", desc:"Ứng dụng web hiện đại — React, Node.js, cơ sở dữ liệu, API và triển khai cloud.", price:["25.000.000₫","60.000.000₫","120.000.000₫"] },
-        { icon:"🛡️", title:"Bảo trì & Hỗ trợ", desc:"Gói chăm sóc sau ra mắt: quản lý hosting, cập nhật, vá bảo mật và giám sát hiệu suất.", price:["1.200.000₫/th","2.400.000₫/th","4.800.000₫/th"] },
-      ],
-      plans:["Cơ bản","Tiêu chuẩn","Cao cấp"],
-    },
-    portfolio: {
-      badge:"Công việc của chúng tôi", h2:"Những Dự Án Chúng Tôi Tự Hào",
-      sub:"Tuyển tập công việc từ các startup, doanh nghiệp và tổ chức phi lợi nhuận.",
-      filters:["Tất cả","React","Node.js","UI/UX","Thương mại điện tử"],
-      projects:[
-        { title:"Nền tảng Cứu hộ Lũ lụt", cat:"React", tags:["React","Node.js","Socket.io","SQL Server"], desc:"Hệ thống điều phối cứu hộ lũ lụt thời gian thực cho 5 loại người dùng.", img:"🌊" },
-        { title:"LuxeShop Thương mại điện tử", cat:"E-Commerce", tags:["Next.js","Stripe","PostgreSQL","TailwindCSS"], desc:"Cửa hàng trực tuyến đầy đủ tính năng với tích hợp thanh toán.", img:"🛍️" },
-        { title:"Ứng dụng Phòng khám MediBook", cat:"UI/UX", tags:["Figma","React","Node.js","MongoDB"], desc:"Hệ thống đặt lịch khám cho chuỗi 12 phòng khám.", img:"🏥" },
-        { title:"Hệ thống Học tập EduLearn", cat:"React", tags:["React","Django","PostgreSQL","AWS S3"], desc:"Hệ thống LMS hỗ trợ 10.000+ học viên với phát trực tiếp video.", img:"📚" },
-        { title:"Bảng điều khiển LogiTrack", cat:"Node.js", tags:["Vue.js","Node.js","MySQL","Docker"], desc:"Bảng điều khiển theo dõi logistics và đội xe thời gian thực.", img:"🚚" },
-        { title:"Trang thương hiệu ArtisanBrew", cat:"UI/UX", tags:["Figma","Webflow","GSAP"], desc:"Thiết kế nhận diện thương hiệu cho nhà máy bia thủ công cao cấp.", img:"🍺" },
-      ],
-    },
-    testimonials: {
-      badge:"Khách hàng yêu thích", h2:"Khách Hàng Nói Gì Về Chúng Tôi",
-      list:[
-        { name:"Nguyễn Văn An", role:"Giám đốc, TechViet Solutions", text:"WebCraft Studio bàn giao trước 2 tuần. Chất lượng code và thiết kế vượt mọi kỳ vọng. Thực sự chuyên nghiệp.", rating:5 },
-        { name:"Sarah Mitchell", role:"Nhà sáng lập, Bloom Agency", text:"Làm việc với nhóm này thật dễ dàng. Họ hiểu tầm nhìn ngay lập tức và tạo ra thứ còn tốt hơn.", rating:5 },
-        { name:"Trần Thị Mai", role:"Giám đốc Marketing, FoodChain VN", text:"Website mới tăng tỷ lệ chuyển đổi 40% trong tháng đầu. UI/UX thật xuất sắc.", rating:5 },
-      ],
-    },
-    contact: {
-      badge:"Hãy cùng xây dựng", h2:"Bắt Đầu Dự Án Ngay Hôm Nay",
-      sub:"Kể cho chúng tôi nghe về tầm nhìn của bạn. Chúng tôi sẽ phản hồi trong 24 giờ.",
-      name:"Họ và tên", email:"Địa chỉ Email", project:"Loại dự án", msg:"Hãy kể về dự án của bạn...",
-      send:"Gửi Tin Nhắn", sending:"Đang gửi...", sent:"Tin nhắn đã gửi! Chúng tôi sẽ liên hệ sớm. 🎉",
-      info:["hello@webcraft.id.vn","+84 (0) 123 456 789","TP. Hồ Chí Minh, Việt Nam"],
-    },
-    footer: { copy:"© 2025 WebCraft Studio · webcraft.id.vn · Được tạo với ❤️ tại Việt Nam." },
-  },
-};
+      /* Hide scrollbar for clean look */
+      ::-webkit-scrollbar {
+        width: 0px;
+      }
 
-const AC = ["#3B82F6","#06B6D4","#8B5CF6"];
-
-function App() {
-  const [lang, setLang] = useState("en");
-  const [dark, setDark] = useState(true);
-  const [active, setActive] = useState("home");
-  const [filter, setFilter] = useState("All");
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [form, setForm] = useState({ name:"", email:"", project:"", msg:"" });
-  const [sent, setSent] = useState(false);
-  const [sending, setSending] = useState(false);
-  const [vis, setVis] = useState({});
-  const refs = useRef({});
-  const t = T[lang];
-
-  const bg    = dark ? "#080C14" : "#F8FAFF";
-  const bg2   = dark ? "#0D1321" : "#EEF2FF";
-  const card  = dark ? "#0F172A" : "#FFFFFF";
-  const bdr   = dark ? "#1E2D4A" : "#DBEAFE";
-  const txt   = dark ? "#F1F5F9" : "#0F172A";
-  const muted = dark ? "#94A3B8" : "#64748B";
-  const A     = "#3B82F6";
-  const A2    = "#06B6D4";
-  const glass = dark ? "rgba(8,12,20,0.88)" : "rgba(248,250,255,0.92)";
-
-  useEffect(() => {
-    document.body.style.background = bg;
-    document.body.style.color = txt;
-  }, [dark]);
-
-  useEffect(() => {
-    const ob = new IntersectionObserver(
-      es => es.forEach(e => { if(e.isIntersecting) setVis(v => ({...v,[e.target.id]:true})); }),
-      { threshold: 0.07 }
-    );
-    Object.values(refs.current).forEach(el => el && ob.observe(el));
-    return () => ob.disconnect();
-  }, []);
-
-  const r = id => el => { refs.current[id] = el; };
-  const go = id => { document.getElementById(id)?.scrollIntoView({behavior:"smooth"}); setActive(id); setMenuOpen(false); };
-  const fi = (id, d=0) => ({ opacity: vis[id]?1:0, transform: vis[id]?"translateY(0)":"translateY(32px)", transition: `opacity .7s ease ${d}s, transform .7s cubic-bezier(.16,1,.3,1) ${d}s` });
-  const send = () => { if(!form.name||!form.email) return; setSending(true); setTimeout(()=>{setSending(false);setSent(true);},1800); };
-
-  const enP = T.en.portfolio.projects;
-  const catMap = {"Tất cả":"All","Thương mại điện tử":"E-Commerce"};
-  const fk = catMap[filter] || filter;
-  const projects = fk==="All" ? t.portfolio.projects : t.portfolio.projects.filter((_,i) => enP[i]?.cat===fk);
-
-  const Tag = ({children, style={}}) => (
-    <span style={{display:"inline-block",background:dark?"rgba(59,130,246,.13)":"rgba(59,130,246,.09)",color:A,border:`1px solid ${dark?"rgba(59,130,246,.28)":"rgba(59,130,246,.2)"}`,padding:"4px 14px",borderRadius:20,fontSize:12,fontWeight:600,letterSpacing:".3px",...style}}>{children}</span>
-  );
-
-  return (
-    <div style={{fontFamily:"'Sora',sans-serif",background:bg,color:txt,minHeight:"100vh",overflowX:"hidden"}}>
-      <style>{`
-        input,textarea,select{background:${dark?"rgba(255,255,255,.04)":"rgba(0,0,0,.03)"};border:1.5px solid ${bdr};border-radius:12px;padding:13px 16px;font-family:'Sora',sans-serif;font-size:14px;color:${txt};width:100%;outline:none;transition:border-color .3s;}
-        input:focus,textarea:focus,select:focus{border-color:${A};box-shadow:0 0 0 3px rgba(59,130,246,.1);}
-        input::placeholder,textarea::placeholder{color:${muted};}
-        select option{background:${card};color:${txt};}
-        .sk{display:inline-block;background:${dark?"rgba(255,255,255,.05)":"rgba(0,0,0,.04)"};color:${muted};padding:5px 12px;border-radius:8px;font-size:11.5px;font-weight:500;margin:3px;}
-        .nav-a{cursor:pointer;font-size:14px;font-weight:500;color:${muted};transition:color .25s;padding:5px 0;position:relative;}
-        .nav-a:hover,.nav-a.on{color:${txt};}
-        .nav-a.on::after{content:'';position:absolute;bottom:-3px;left:0;width:100%;height:2px;background:linear-gradient(90deg,${A},${A2});border-radius:2px;}
-        .btn-g{background:transparent;color:${txt};border:1.5px solid ${bdr};padding:13px 26px;border-radius:12px;font-family:'Sora',sans-serif;font-weight:500;font-size:15px;cursor:pointer;transition:all .3s;}
-        .btn-g:hover{border-color:${A};color:${A};}
-      `}</style>
-
-      {/* NAV */}
-      <nav style={{position:"fixed",top:0,left:0,right:0,zIndex:200,backdropFilter:"blur(20px)",WebkitBackdropFilter:"blur(20px)",background:glass,borderBottom:`1px solid ${bdr}`}}>
-        <div style={{maxWidth:1280,margin:"0 auto",padding:"0 24px",height:70,display:"flex",alignItems:"center",justifyContent:"space-between"}}>
-          <div style={{display:"flex",alignItems:"center",gap:10,cursor:"pointer"}} onClick={()=>go("home")}>
-            <div style={{width:36,height:36,borderRadius:9,background:`linear-gradient(135deg,${A},${A2})`,display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 6px 18px rgba(59,130,246,.4)"}}>
-              <span style={{color:"#fff",fontWeight:800,fontSize:15,fontFamily:"Space Grotesk"}}>W</span>
-            </div>
-            <span style={{fontWeight:700,fontSize:16,letterSpacing:"-.3px",fontFamily:"Space Grotesk"}}>WebCraft<span style={{color:A}}>Studio</span></span>
+      iconify-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        stroke-width: 1.5;
+      }
+    </style>
+  </head>
+  <body
+    class="text-gray-900 antialiased selection:bg-blue-100 selection:text-blue-900 relative"
+  >
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/80 border-b border-gray-100 transition-all duration-300"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between"
+      >
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2 group">
+          <div
+            class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-semibold tracking-tighter text-sm group-hover:bg-blue-700 transition-colors"
+          >
+            WC
           </div>
-          <div className="d-nav" style={{display:"flex",alignItems:"center",gap:28}}>
-            {Object.entries(t.nav).filter(([k])=>k!=="getQuote").map(([k,v])=>(
-              <span key={k} className={`nav-a ${active===k?"on":""}`} onClick={()=>go(k)}>{v}</span>
-            ))}
-          </div>
-          <div style={{display:"flex",alignItems:"center",gap:10}}>
-            <button onClick={()=>setLang(l=>l==="en"?"vi":"en")} style={{background:dark?"rgba(255,255,255,.06)":"rgba(0,0,0,.05)",border:`1px solid ${bdr}`,borderRadius:8,padding:"6px 12px",color:txt,cursor:"pointer",fontSize:13,fontWeight:600,fontFamily:"Sora"}}>
-              {lang==="en"?"🇻🇳 VI":"🇺🇸 EN"}
-            </button>
-            <button onClick={()=>setDark(d=>!d)} style={{width:38,height:38,borderRadius:9,background:dark?"rgba(255,255,255,.06)":"rgba(0,0,0,.05)",border:`1px solid ${bdr}`,cursor:"pointer",fontSize:17,display:"flex",alignItems:"center",justifyContent:"center"}}>
-              {dark?"☀️":"🌙"}
-            </button>
-            <button className="btn-p" style={{padding:"9px 18px",fontSize:14,borderRadius:10}} onClick={()=>go("contact")}>{t.nav.getQuote}</button>
-            <button className="hbg" onClick={()=>setMenuOpen(m=>!m)} style={{display:"none",width:38,height:38,borderRadius:9,background:"transparent",border:`1px solid ${bdr}`,cursor:"pointer",fontSize:18,color:txt,alignItems:"center",justifyContent:"center"}}>
-              {menuOpen?"✕":"☰"}
-            </button>
-          </div>
+          <span class="font-semibold tracking-tighter text-base hidden sm:block"
+            >WEBCRAFT</span
+          >
+        </a>
+
+        <!-- Desktop Links -->
+        <div class="hidden md:flex items-center gap-8">
+          <a
+            href="#about"
+            class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors"
+            >About</a
+          >
+          <a
+            href="#services"
+            class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors"
+            >Services</a
+          >
+          <a
+            href="#portfolio"
+            class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors"
+            >Work</a
+          >
+          <a
+            href="#contact"
+            class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors"
+            >Contact</a
+          >
         </div>
-        {menuOpen && (
-          <div style={{background:glass,backdropFilter:"blur(20px)",padding:"16px 24px 24px",borderTop:`1px solid ${bdr}`,display:"flex",flexDirection:"column",gap:18}}>
-            {Object.entries(t.nav).filter(([k])=>k!=="getQuote").map(([k,v])=>(
-              <span key={k} style={{fontSize:16,fontWeight:500,color:active===k?A:txt,cursor:"pointer"}} onClick={()=>go(k)}>{v}</span>
-            ))}
-          </div>
-        )}
-      </nav>
 
-      {/* HERO */}
-      <section id="home" ref={r("home")} style={{minHeight:"100vh",display:"flex",alignItems:"center",position:"relative",overflow:"hidden",padding:"100px 24px 80px"}}>
-        <div className="mesh" style={{width:700,height:700,background:dark?"rgba(59,130,246,.12)":"rgba(59,130,246,.07)",top:-200,right:-200}}/>
-        <div className="mesh" style={{width:500,height:500,background:dark?"rgba(6,182,212,.08)":"rgba(6,182,212,.05)",bottom:-100,left:-150}}/>
-        <div className="fl" style={{position:"absolute",top:"22%",right:"7%",width:70,height:70,borderRadius:18,background:`linear-gradient(135deg,${A},${A2})`,opacity:.13,pointerEvents:"none"}}/>
-        <div className="fl2" style={{position:"absolute",bottom:"28%",right:"16%",width:44,height:44,borderRadius:"50%",background:`linear-gradient(135deg,${A2},#8B5CF6)`,opacity:.17,pointerEvents:"none"}}/>
-        <div style={{maxWidth:1280,margin:"0 auto",width:"100%"}}>
-          <div className="hero-grid" style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:60,alignItems:"center"}}>
-            <div style={{...fi("home")}}>
-              <div style={{display:"inline-flex",alignItems:"center",gap:8,background:dark?"rgba(59,130,246,.12)":"rgba(59,130,246,.08)",border:`1px solid ${dark?"rgba(59,130,246,.25)":"rgba(59,130,246,.18)"}`,borderRadius:20,padding:"6px 16px",fontSize:13,fontWeight:600,color:A,marginBottom:20,cursor:"pointer"}} onClick={()=>window.open(SITE_URL,"_blank")}>
-                {t.hero.domain}
-              </div>
-              <Tag style={{marginBottom:20,display:"block"}}>{t.hero.badge}</Tag>
-              <h1 style={{fontSize:"clamp(36px,4.5vw,66px)",fontWeight:800,lineHeight:1.1,letterSpacing:"-2px",marginBottom:24,fontFamily:"Space Grotesk"}}>
-                {t.hero.h1a}<br/>
-                <span className="gt">{t.hero.h1b}</span><br/>
-                {t.hero.h1c}
-              </h1>
-              <p style={{fontSize:16,color:muted,lineHeight:1.85,maxWidth:460,marginBottom:36}}>{t.hero.sub}</p>
-              <div style={{display:"flex",gap:14,flexWrap:"wrap",marginBottom:50}}>
-                <button className="btn-p" onClick={()=>go("portfolio")}>{t.hero.cta1} →</button>
-                <button className="btn-g" onClick={()=>go("contact")}>{t.hero.cta2}</button>
-              </div>
-              <div style={{display:"flex",gap:36,flexWrap:"wrap"}}>
-                {[["48+",t.hero.stat1],["35+",t.hero.stat2],["4+",t.hero.stat3]].map(([n,l])=>(
-                  <div key={l}>
-                    <div style={{fontSize:30,fontWeight:800,color:A,fontFamily:"Space Grotesk",lineHeight:1}}>{n}</div>
-                    <div style={{fontSize:12.5,color:muted,marginTop:4}}>{l}</div>
-                  </div>
-                ))}
+        <!-- Controls (Lang, Theme, CTA) -->
+        <div class="flex items-center gap-4">
+          <!-- Custom Lang Toggle (Visual) -->
+          <div
+            class="hidden sm:flex items-center bg-gray-50 border border-gray-200 rounded-full p-1"
+          >
+            <button
+              class="px-3 py-1 rounded-full bg-white shadow-sm text-xs font-medium text-gray-900"
+            >
+              EN
+            </button>
+            <button
+              class="px-3 py-1 rounded-full text-xs font-medium text-gray-500 hover:text-gray-900 transition-colors"
+            >
+              VI
+            </button>
+          </div>
+
+          <!-- Custom Theme Toggle (Visual) -->
+          <button
+            class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors"
+          >
+            <iconify-icon
+              icon="solar:sun-linear"
+              class="text-lg"
+            ></iconify-icon>
+          </button>
+
+          <a
+            href="#contact"
+            class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-full hover:bg-gray-800 transition-colors"
+          >
+            Get a Quote
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button class="md:hidden text-gray-500 hover:text-gray-900">
+            <iconify-icon
+              icon="solar:hamburger-menu-linear"
+              class="text-xl"
+            ></iconify-icon>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="md:pt-48 md:pb-32 hero-bg overflow-hidden flex flex-col min-h-[90vh] pt-32 pb-20 relative items-center justify-center"
+    >
+      <div class="max-w-4xl mx-auto px-6 text-center z-10">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-medium mb-8"
+        >
+          <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+          Available for new projects
+        </div>
+
+        <h1
+          class="md:text-6xl lg:text-7xl leading-tight text-4xl font-semibold text-gray-900 tracking-tight mb-6"
+        >
+          We Design Modern Websites <br class="hidden md:block" />
+          That Grow Your Business
+        </h1>
+
+        <p
+          class="text-base md:text-lg text-gray-500 mb-10 max-w-2xl mx-auto font-light"
+        >
+          <span class="block mb-2"
+            >Creating clean, fast, and user-centric digital experiences for
+            startups and businesses.</span
+          >
+          <span class="block text-sm text-gray-400 italic"
+            >Chúng tôi thiết kế website hiện đại giúp phát triển doanh nghiệp
+            của bạn.</span
+          >
+        </p>
+
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <a
+            href="#portfolio"
+            class="w-full sm:w-auto px-6 py-3 text-sm font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-all shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] hover:shadow-[0_6px_20px_rgba(37,99,235,0.23)] flex items-center justify-center gap-2"
+          >
+            View Portfolio
+            <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+          </a>
+          <a
+            href="#contact"
+            class="w-full sm:w-auto px-6 py-3 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-full hover:bg-gray-50 transition-colors flex items-center justify-center"
+          >
+            Get a Quote
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section (Team) -->
+    <section id="about" class="py-24 bg-white border-t border-gray-100">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-semibold tracking-tight text-gray-900 mb-2">
+            Meet the Team
+          </h2>
+          <p class="text-sm text-gray-500 font-light">
+            Đội ngũ chuyên gia của chúng tôi
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <!-- Member 1 -->
+          <div
+            class="group transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:border-gray-200 flex flex-col text-center bg-white border-gray-100 border rounded-3xl pt-6 pr-6 pb-6 pl-6 relative items-center"
+          >
+            <div
+              class="w-24 h-24 rounded-full bg-gray-50 border border-gray-100 mb-4 overflow-hidden relative"
+            >
+              <!-- Placeholder Avatar -->
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center"
+              >
+                <iconify-icon
+                  icon="solar:user-circle-linear"
+                  class="text-3xl text-blue-200"
+                ></iconify-icon>
               </div>
             </div>
-            <div className="hero-visual" style={{display:"flex",justifyContent:"center",position:"relative"}}>
-              <div className="fl" style={{width:"min(420px,85vw)",height:"min(420px,85vw)",borderRadius:"40% 60% 55% 45%/45% 55% 65% 35%",background:`linear-gradient(135deg,${dark?"rgba(59,130,246,.18)":"rgba(59,130,246,.1)"},${dark?"rgba(6,182,212,.12)":"rgba(6,182,212,.07)"})`,border:`1px solid ${dark?"rgba(59,130,246,.18)":"rgba(59,130,246,.1)"}`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:"clamp(80px,12vw,120px)"}}>
-                🚀
+            <h3 class="text-lg font-medium text-gray-900">Alex Nguyen</h3>
+            <p class="text-sm text-blue-600 font-medium mb-3">UI/UX Designer</p>
+            <p class="text-sm text-gray-500 mb-4 font-light">
+              Crafting intuitive and aesthetically pleasing interfaces focusing
+              on user experience.
+            </p>
+            <div class="flex gap-2 mt-auto">
+              <span
+                class="px-2 py-1 bg-gray-50 border border-gray-100 text-gray-500 rounded text-xs"
+                >Figma</span
+              >
+              <span
+                class="px-2 py-1 bg-gray-50 border border-gray-100 text-gray-500 rounded text-xs"
+                >Framer</span
+              >
+            </div>
+          </div>
+
+          <!-- Member 2 -->
+          <div
+            class="group relative bg-white border border-gray-100 rounded-3xl p-6 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:border-gray-200 flex flex-col items-center text-center"
+          >
+            <div
+              class="w-24 h-24 rounded-full bg-gray-50 border border-gray-100 mb-4 overflow-hidden relative"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 flex items-center justify-center"
+              >
+                <iconify-icon
+                  icon="solar:user-circle-linear"
+                  class="text-3xl text-purple-200"
+                ></iconify-icon>
               </div>
-              {[{icon:"⚛️",label:"React",l:"-12%",t:"18%",d:0},{icon:"🎨",label:"UI/UX",l:"82%",t:"8%",d:1},{icon:"⚙️",label:"Node.js",l:"78%",t:"68%",d:.5}].map(({icon,label,l,t:top,d})=>(
-                <div key={label} className="fl" style={{position:"absolute",left:l,top:top,background:card,border:`1px solid ${bdr}`,borderRadius:12,padding:"9px 14px",display:"flex",alignItems:"center",gap:7,fontSize:13,fontWeight:600,boxShadow:`0 8px 24px rgba(0,0,0,${dark?.28:.08})`,animationDelay:`${d}s`}}>
-                  <span style={{fontSize:17}}>{icon}</span>{label}
-                </div>
-              ))}
+            </div>
+            <h3 class="text-lg font-medium text-gray-900">Minh Tran</h3>
+            <p class="text-sm text-purple-600 font-medium mb-3">
+              Frontend Developer
+            </p>
+            <p class="text-sm text-gray-500 mb-4 font-light">
+              Building fast, responsive, and interactive web applications with
+              modern frameworks.
+            </p>
+            <div class="flex gap-2 mt-auto">
+              <span
+                class="px-2 py-1 bg-gray-50 border border-gray-100 text-gray-500 rounded text-xs"
+                >React</span
+              >
+              <span
+                class="px-2 py-1 bg-gray-50 border border-gray-100 text-gray-500 rounded text-xs"
+                >Tailwind</span
+              >
+            </div>
+          </div>
+
+          <!-- Member 3 -->
+          <div
+            class="group relative bg-white border border-gray-100 rounded-3xl p-6 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:border-gray-200 flex flex-col items-center text-center"
+          >
+            <div
+              class="w-24 h-24 rounded-full bg-gray-50 border border-gray-100 mb-4 overflow-hidden relative"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-pink-50 to-teal-50 flex items-center justify-center"
+              >
+                <iconify-icon
+                  icon="solar:user-circle-linear"
+                  class="text-3xl text-pink-200"
+                ></iconify-icon>
+              </div>
+            </div>
+            <h3 class="text-lg font-medium text-gray-900">David Pham</h3>
+            <p class="text-sm text-pink-600 font-medium mb-3">
+              Backend Developer
+            </p>
+            <p class="text-sm text-gray-500 mb-4 font-light">
+              Architecting robust APIs, managing databases, and ensuring server
+              performance.
+            </p>
+            <div class="flex gap-2 mt-auto">
+              <span
+                class="px-2 py-1 bg-gray-50 border border-gray-100 text-gray-500 rounded text-xs"
+                >Node.js</span
+              >
+              <span
+                class="px-2 py-1 bg-gray-50 border border-gray-100 text-gray-500 rounded text-xs"
+                >PostgreSQL</span
+              >
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      {/* ABOUT */}
-      <section id="about" ref={r("about")} style={{padding:"96px 24px",background:bg2}}>
-        <div style={{maxWidth:1280,margin:"0 auto"}}>
-          <div style={{textAlign:"center",marginBottom:72,...fi("about")}}>
-            <Tag style={{marginBottom:14}}>{t.about.badge}</Tag>
-            <h2 style={{fontSize:"clamp(28px,3.8vw,52px)",fontWeight:800,fontFamily:"Space Grotesk",letterSpacing:"-1px",marginBottom:16,marginTop:12}}>{t.about.h2}</h2>
-            <p style={{color:muted,fontSize:16,maxWidth:540,margin:"0 auto"}}>{t.about.sub}</p>
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-gray-50/50 border-t border-gray-100">
+      <div class="max-w-7xl mx-auto px-6">
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6"
+        >
+          <div>
+            <h2
+              class="text-3xl font-semibold tracking-tight text-gray-900 mb-2"
+            >
+              Our Services
+            </h2>
+            <p class="text-sm text-gray-500 font-light max-w-lg">
+              Comprehensive web solutions tailored to your business needs.
+              <br />
+              <span class="italic text-gray-400"
+                >Giải pháp toàn diện cho doanh nghiệp của bạn.</span
+              >
+            </p>
           </div>
-          <div className="three-col" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:24,marginBottom:48}}>
-            {t.about.members.map((m,i)=>(
-              <div key={m.name} className="ch" style={{background:card,border:`1px solid ${bdr}`,borderRadius:22,padding:28,...fi("about",i*.1)}}>
-                <div style={{width:64,height:64,borderRadius:18,background:AC[i],display:"flex",alignItems:"center",justifyContent:"center",fontSize:26,marginBottom:18,boxShadow:`0 8px 20px ${AC[i]}38`}}>
-                  {["👩‍🎨","👨‍💻","👩‍💻"][i]}
+          <!-- Custom styling visual toggle for pricing plans -->
+          <div
+            class="flex items-center bg-gray-100/50 border border-gray-200 rounded-full p-1 w-fit"
+          >
+            <button
+              class="px-4 py-1.5 rounded-full bg-white shadow-sm border border-gray-100 text-xs font-medium text-gray-900"
+            >
+              Monthly
+            </button>
+            <button
+              class="px-4 py-1.5 rounded-full text-xs font-medium text-gray-500 hover:text-gray-900 transition-colors"
+            >
+              Project based
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Service 1 -->
+          <div
+            class="bg-white p-6 rounded-3xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all group cursor-default"
+          >
+            <div
+              class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition-transform"
+            >
+              <iconify-icon
+                icon="solar:pen-new-square-linear"
+                class="text-xl"
+              ></iconify-icon>
+            </div>
+            <h3 class="text-base font-medium text-gray-900 mb-2">
+              UI/UX Design
+            </h3>
+            <p class="text-sm text-gray-500 font-light mb-4">
+              Wireframes, prototyping, and high-fidelity interfaces.
+            </p>
+            <div
+              class="mt-auto border-t border-gray-50 pt-4 flex items-center justify-between"
+            >
+              <span class="text-xs text-gray-400">Thiết kế giao diện</span>
+              <iconify-icon
+                icon="solar:arrow-right-linear"
+                class="text-gray-300 group-hover:text-blue-600 transition-colors"
+              ></iconify-icon>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div
+            class="bg-white p-6 rounded-3xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all group cursor-default"
+          >
+            <div
+              class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600 mb-6 group-hover:scale-110 transition-transform"
+            >
+              <iconify-icon
+                icon="solar:devices-linear"
+                class="text-xl"
+              ></iconify-icon>
+            </div>
+            <h3 class="text-base font-medium text-gray-900 mb-2">Web Design</h3>
+            <p class="text-sm text-gray-500 font-light mb-4">
+              Responsive marketing websites and landing pages.
+            </p>
+            <div
+              class="mt-auto border-t border-gray-50 pt-4 flex items-center justify-between"
+            >
+              <span class="text-xs text-gray-400">Thiết kế website</span>
+              <iconify-icon
+                icon="solar:arrow-right-linear"
+                class="text-gray-300 group-hover:text-purple-600 transition-colors"
+              ></iconify-icon>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div
+            class="bg-white p-6 rounded-3xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all group cursor-default"
+          >
+            <div
+              class="w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center text-pink-600 mb-6 group-hover:scale-110 transition-transform"
+            >
+              <iconify-icon
+                icon="solar:code-square-linear"
+                class="text-xl"
+              ></iconify-icon>
+            </div>
+            <h3 class="text-base font-medium text-gray-900 mb-2">
+              Full-stack Dev
+            </h3>
+            <p class="text-sm text-gray-500 font-light mb-4">
+              Custom web applications with robust backend systems.
+            </p>
+            <div
+              class="mt-auto border-t border-gray-50 pt-4 flex items-center justify-between"
+            >
+              <span class="text-xs text-gray-400">Phát triển phần mềm</span>
+              <iconify-icon
+                icon="solar:arrow-right-linear"
+                class="text-gray-300 group-hover:text-pink-600 transition-colors"
+              ></iconify-icon>
+            </div>
+          </div>
+
+          <!-- Service 4 -->
+          <div
+            class="bg-white p-6 rounded-3xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all group cursor-default"
+          >
+            <div
+              class="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center text-orange-600 mb-6 group-hover:scale-110 transition-transform"
+            >
+              <iconify-icon
+                icon="solar:settings-linear"
+                class="text-xl"
+              ></iconify-icon>
+            </div>
+            <h3 class="text-base font-medium text-gray-900 mb-2">
+              Maintenance
+            </h3>
+            <p class="text-sm text-gray-500 font-light mb-4">
+              Ongoing support, updates, and performance optimization.
+            </p>
+            <div
+              class="mt-auto border-t border-gray-50 pt-4 flex items-center justify-between"
+            >
+              <span class="text-xs text-gray-400">Bảo trì &amp; Hỗ trợ</span>
+              <iconify-icon
+                icon="solar:arrow-right-linear"
+                class="text-gray-300 group-hover:text-orange-600 transition-colors"
+              ></iconify-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-24 bg-white border-t border-gray-100">
+      <div class="max-w-7xl mx-auto px-6">
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6"
+        >
+          <div>
+            <h2
+              class="text-3xl font-semibold tracking-tight text-gray-900 mb-2"
+            >
+              Selected Work
+            </h2>
+            <p class="text-sm text-gray-500 font-light">Dự án tiêu biểu</p>
+          </div>
+
+          <!-- Filter Dropdown (Custom Visual) -->
+          <div class="relative inline-block text-left w-full sm:w-auto">
+            <button
+              type="button"
+              class="inline-flex w-full sm:w-40 justify-between items-center gap-x-1.5 rounded-lg bg-white px-3 py-2 text-sm text-gray-900 shadow-sm ring-1 ring-inset ring-gray-200 hover:bg-gray-50"
+            >
+              All Projects
+              <iconify-icon
+                icon="solar:alt-arrow-down-linear"
+                class="text-gray-400"
+              ></iconify-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Project 1 -->
+          <div class="group cursor-pointer">
+            <div
+              class="relative w-full aspect-[4/3] rounded-2xl bg-gray-100 overflow-hidden mb-4 border border-gray-100"
+            >
+              <!-- Abstract placeholder representing project screenshot -->
+              <div
+                class="absolute inset-0 bg-gradient-to-tr from-gray-50 to-gray-200 flex flex-col"
+              >
+                <div
+                  class="h-8 bg-white/50 border-b border-white/20 flex items-center px-4 gap-1.5"
+                >
+                  <div class="w-2 h-2 rounded-full bg-red-300"></div>
+                  <div class="w-2 h-2 rounded-full bg-amber-300"></div>
+                  <div class="w-2 h-2 rounded-full bg-green-300"></div>
                 </div>
-                <h3 style={{fontSize:20,fontWeight:700,marginBottom:4,fontFamily:"Space Grotesk"}}>{m.name}</h3>
-                <div style={{color:A,fontSize:13.5,fontWeight:600,marginBottom:12}}>{m.role}</div>
-                <p style={{color:muted,fontSize:13.5,lineHeight:1.75,marginBottom:18}}>{m.bio}</p>
-                <div>{m.skills.map(s=><span key={s} className="sk">{s}</span>)}</div>
+                <div class="flex-1 p-6 flex flex-col gap-4">
+                  <div class="w-1/3 h-4 bg-white/60 rounded"></div>
+                  <div class="w-full h-24 bg-white/60 rounded-xl"></div>
+                  <div class="w-2/3 h-12 bg-white/60 rounded-xl"></div>
+                </div>
               </div>
-            ))}
+              <div
+                class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-gray-900 shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform"
+                >
+                  <iconify-icon
+                    icon="solar:arrow-right-up-linear"
+                    class="text-xl"
+                  ></iconify-icon>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-start justify-between">
+              <div>
+                <h3
+                  class="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition-colors"
+                >
+                  Fintech Dashboard
+                </h3>
+                <p class="text-sm text-gray-500 font-light mt-1">
+                  Financial data visualization platform for enterprise.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-2 mt-3">
+              <span
+                class="text-xs px-2 py-1 rounded-md bg-gray-50 text-gray-600 border border-gray-100"
+                >React</span
+              >
+              <span
+                class="text-xs px-2 py-1 rounded-md bg-gray-50 text-gray-600 border border-gray-100"
+                >Tailwind</span
+              >
+            </div>
           </div>
-          <div className="two-col" style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:24}}>
-            {[
-              {title:t.about.mission,text:t.about.missionText,icon:"🎯",g:`linear-gradient(135deg,${A},#6366F1)`},
-              {title:t.about.vision,text:t.about.visionText,icon:"🔭",g:`linear-gradient(135deg,${A2},#0EA5E9)`},
-            ].map(({title,text:tx,icon,g})=>(
-              <div key={title} style={{background:card,border:`1px solid ${bdr}`,borderRadius:22,padding:32,display:"flex",gap:20,...fi("about")}}>
-                <div style={{width:52,height:52,borderRadius:14,background:g,display:"flex",alignItems:"center",justifyContent:"center",fontSize:22,flexShrink:0}}>{icon}</div>
+
+          <!-- Project 2 -->
+          <div class="group cursor-pointer">
+            <div
+              class="relative w-full aspect-[4/3] rounded-2xl bg-gray-100 overflow-hidden mb-4 border border-gray-100"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-bl from-blue-50 to-indigo-50 flex items-center justify-center p-8"
+              >
+                <div
+                  class="w-full h-full border border-blue-100/50 rounded-xl bg-white/40 backdrop-blur-sm flex flex-col items-center justify-center gap-4 shadow-sm"
+                >
+                  <div class="w-16 h-16 rounded-full bg-blue-100/50"></div>
+                  <div class="w-32 h-3 bg-blue-100/50 rounded"></div>
+                </div>
+              </div>
+              <div
+                class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-gray-900 shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform"
+                >
+                  <iconify-icon
+                    icon="solar:arrow-right-up-linear"
+                    class="text-xl"
+                  ></iconify-icon>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-start justify-between">
+              <div class="">
+                <h3
+                  class="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition-colors"
+                >
+                  E-commerce App
+                </h3>
+                <p class="text-sm text-gray-500 font-light mt-1">
+                  Modern shopping experience with seamless checkout.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-2 mt-3">
+              <span
+                class="text-xs px-2 py-1 rounded-md bg-gray-50 text-gray-600 border border-gray-100"
+                >Next.js</span
+              >
+              <span
+                class="text-xs px-2 py-1 rounded-md bg-gray-50 text-gray-600 border border-gray-100"
+                >Stripe</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <button
+            class="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+          >
+            View all projects
+            <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      class="overflow-hidden bg-gray-50/30 border-gray-100 border-t pt-24 pb-24 relative"
+      id="contact"
+    >
+      <!-- Abstract background shape -->
+      <div
+        class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-50/50 blur-3xl -z-10"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <!-- Contact Info -->
+          <div class="">
+            <h2
+              class="text-3xl lg:text-4xl font-semibold tracking-tight text-gray-900 mb-4"
+            >
+              Start Your Project Today
+            </h2>
+            <p class="text-base text-gray-500 font-light mb-8 max-w-md">
+              Have an idea? Let's build something great together. Fill out the
+              form or reach out directly.
+              <br />
+              <span class="text-sm italic text-gray-400 mt-2 block"
+                >Bắt đầu dự án của bạn ngay hôm nay. Vui lòng để lại thông tin
+                liên hệ.</span
+              >
+            </p>
+
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded-full bg-white border border-gray-100 flex items-center justify-center text-gray-600 flex-shrink-0 shadow-sm"
+                >
+                  <iconify-icon
+                    icon="solar:letter-linear"
+                    class="text-lg"
+                  ></iconify-icon>
+                </div>
                 <div>
-                  <h3 style={{fontSize:19,fontWeight:700,marginBottom:8,fontFamily:"Space Grotesk"}}>{title}</h3>
-                  <p style={{color:muted,fontSize:14,lineHeight:1.8}}>{tx}</p>
+                  <p class="text-sm font-medium text-gray-900">Email</p>
+                  <a
+                    href="mailto:hello@webcraftstudio.com"
+                    class="text-sm text-gray-500 hover:text-blue-600 transition-colors"
+                    >hello@webcraftstudio.com</a
+                  >
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* SERVICES */}
-      <section id="services" ref={r("services")} style={{padding:"96px 24px",background:bg}}>
-        <div style={{maxWidth:1280,margin:"0 auto"}}>
-          <div style={{textAlign:"center",marginBottom:72,...fi("services")}}>
-            <Tag style={{marginBottom:14}}>{t.services.badge}</Tag>
-            <h2 style={{fontSize:"clamp(28px,3.8vw,52px)",fontWeight:800,fontFamily:"Space Grotesk",letterSpacing:"-1px",marginBottom:16,marginTop:12}}>{t.services.h2}</h2>
-            <p style={{color:muted,fontSize:16,maxWidth:480,margin:"0 auto"}}>{t.services.sub}</p>
-          </div>
-          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(265px,1fr))",gap:22}}>
-            {t.services.list.map((svc,i)=>(
-              <div key={svc.title} className="ch" style={{background:card,border:`1px solid ${bdr}`,borderRadius:22,overflow:"hidden",...fi("services",i*.08)}}>
-                <div style={{background:`linear-gradient(135deg,${A}14,${A2}0a)`,padding:"26px 26px 22px",borderBottom:`1px solid ${bdr}`}}>
-                  <div style={{fontSize:34,marginBottom:10}}>{svc.icon}</div>
-                  <h3 style={{fontSize:19,fontWeight:700,marginBottom:8,fontFamily:"Space Grotesk"}}>{svc.title}</h3>
-                  <p style={{color:muted,fontSize:13.5,lineHeight:1.75}}>{svc.desc}</p>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded-full bg-white border border-gray-100 flex items-center justify-center text-gray-600 flex-shrink-0 shadow-sm"
+                >
+                  <iconify-icon
+                    icon="solar:map-point-linear"
+                    class="text-lg"
+                  ></iconify-icon>
                 </div>
-                <div style={{padding:"18px 26px 26px"}}>
-                  <div style={{fontSize:11,fontWeight:700,color:muted,letterSpacing:"1px",textTransform:"uppercase",marginBottom:14}}>Pricing</div>
-                  {t.services.plans.map((plan,j)=>(
-                    <div key={plan} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"9px 0",borderBottom:j<2?`1px solid ${bdr}`:"none"}}>
-                      <span style={{fontSize:13.5,color:muted}}>{plan}</span>
-                      <span style={{fontSize:14.5,fontWeight:700,color:j===2?A:txt}}>{svc.price[j]}</span>
-                    </div>
-                  ))}
-                  <button className="btn-p" style={{width:"100%",marginTop:18,padding:"12px",fontSize:14,borderRadius:11}} onClick={()=>go("contact")}>Get Started →</button>
+                <div>
+                  <p class="text-sm font-medium text-gray-900">Location</p>
+                  <p class="text-sm text-gray-500">
+                    Ho Chi Minh City, Vietnam<br /><span
+                      class="text-xs text-gray-400"
+                      >Available globally</span
+                    >
+                  </p>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PORTFOLIO */}
-      <section id="portfolio" ref={r("portfolio")} style={{padding:"96px 24px",background:bg2}}>
-        <div style={{maxWidth:1280,margin:"0 auto"}}>
-          <div style={{textAlign:"center",marginBottom:52,...fi("portfolio")}}>
-            <Tag style={{marginBottom:14}}>{t.portfolio.badge}</Tag>
-            <h2 style={{fontSize:"clamp(28px,3.8vw,52px)",fontWeight:800,fontFamily:"Space Grotesk",letterSpacing:"-1px",marginBottom:16,marginTop:12}}>{t.portfolio.h2}</h2>
-            <p style={{color:muted,fontSize:16,maxWidth:480,margin:"0 auto 32px"}}>{t.portfolio.sub}</p>
-            <div style={{display:"flex",gap:8,justifyContent:"center",flexWrap:"wrap"}}>
-              {t.portfolio.filters.map(f=>(
-                <button key={f} onClick={()=>setFilter(f)} style={{padding:"8px 18px",borderRadius:20,fontSize:13.5,fontWeight:600,cursor:"pointer",fontFamily:"Sora",transition:"all .25s",background:filter===f?`linear-gradient(135deg,${A},${A2})`:card,color:filter===f?"#fff":muted,border:filter===f?"none":`1px solid ${bdr}`}}>
-                  {f}
-                </button>
-              ))}
             </div>
           </div>
-          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(300px,1fr))",gap:22}}>
-            {projects.map((proj,i)=>(
-              <div key={proj.title} className="ch" style={{background:card,border:`1px solid ${bdr}`,borderRadius:22,overflow:"hidden",...fi("portfolio",i*.07)}}>
-                <div style={{height:165,background:`linear-gradient(135deg,${A}18,${A2}10)`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:58,position:"relative"}}>
-                  {proj.img}
-                  <div style={{position:"absolute",top:12,right:12}}><Tag style={{fontSize:11}}>{proj.tags[0]}</Tag></div>
-                </div>
-                <div style={{padding:22}}>
-                  <h3 style={{fontSize:17,fontWeight:700,marginBottom:7,fontFamily:"Space Grotesk"}}>{proj.title}</h3>
-                  <p style={{color:muted,fontSize:13.5,lineHeight:1.7,marginBottom:14}}>{proj.desc}</p>
-                  <div style={{display:"flex",flexWrap:"wrap",gap:5}}>
-                    {proj.tags.map(tag=><Tag key={tag} style={{fontSize:11}}>{tag}</Tag>)}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* TESTIMONIALS */}
-      <section id="testimonials" ref={r("testimonials")} style={{padding:"96px 24px",background:bg}}>
-        <div style={{maxWidth:1280,margin:"0 auto"}}>
-          <div style={{textAlign:"center",marginBottom:64,...fi("testimonials")}}>
-            <Tag style={{marginBottom:14}}>{t.testimonials.badge}</Tag>
-            <h2 style={{fontSize:"clamp(28px,3.8vw,52px)",fontWeight:800,fontFamily:"Space Grotesk",letterSpacing:"-1px",marginTop:12}}>{t.testimonials.h2}</h2>
-          </div>
-          <div className="three-col" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:22}}>
-            {t.testimonials.list.map((item,i)=>(
-              <div key={item.name} className="ch" style={{background:card,border:`1px solid ${bdr}`,borderRadius:22,padding:28,...fi("testimonials",i*.1)}}>
-                <div style={{marginBottom:16}}>{[...Array(item.rating)].map((_,j)=><span key={j} style={{color:"#F59E0B",fontSize:15}}>★</span>)}</div>
-                <p style={{color:muted,fontSize:14,lineHeight:1.85,marginBottom:22,fontStyle:"italic"}}>"{item.text}"</p>
-                <div style={{display:"flex",alignItems:"center",gap:12}}>
-                  <div style={{width:42,height:42,borderRadius:11,background:`linear-gradient(135deg,${AC[i]},${A2})`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:17}}>
-                    {["👨‍💼","👩‍💼","👩‍💼"][i]}
-                  </div>
-                  <div>
-                    <div style={{fontWeight:700,fontSize:14.5}}>{item.name}</div>
-                    <div style={{color:muted,fontSize:12.5}}>{item.role}</div>
-                  </div>
+          <!-- Contact Form -->
+          <div
+            class="bg-white p-8 rounded-3xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)]"
+          >
+            <form class="space-y-5">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div class="space-y-1.5">
+                  <label class="text-xs font-medium text-gray-700"
+                    >Name
+                    <span class="text-gray-400 font-normal">(Tên)</span></label
+                  >
+                  <input
+                    type="text"
+                    placeholder="John Doe"
+                    class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all placeholder:text-gray-400"
+                  />
+                </div>
+                <div class="space-y-1.5">
+                  <label class="text-xs font-medium text-gray-700">Email</label>
+                  <input
+                    type="email"
+                    placeholder="john@example.com"
+                    class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all placeholder:text-gray-400"
+                  />
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* CONTACT */}
-      <section id="contact" ref={r("contact")} style={{padding:"96px 24px",background:bg2}}>
-        <div style={{maxWidth:1280,margin:"0 auto"}}>
-          <div className="two-col" style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:60,alignItems:"start"}}>
-            <div style={{...fi("contact")}}>
-              <Tag style={{marginBottom:18}}>{t.contact.badge}</Tag>
-              <h2 style={{fontSize:"clamp(26px,3.2vw,48px)",fontWeight:800,fontFamily:"Space Grotesk",letterSpacing:"-1px",marginBottom:18,lineHeight:1.2,marginTop:12}}>{t.contact.h2}</h2>
-              <p style={{color:muted,fontSize:15.5,lineHeight:1.85,marginBottom:36}}>{t.contact.sub}</p>
-              <div style={{display:"flex",flexDirection:"column",gap:18,marginBottom:32}}>
-                {[["📧",t.contact.info[0]],["📞",t.contact.info[1]],["📍",t.contact.info[2]]].map(([icon,info])=>(
-                  <div key={info} style={{display:"flex",alignItems:"center",gap:14}}>
-                    <div style={{width:42,height:42,borderRadius:12,background:`linear-gradient(135deg,${A},${A2})`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:17,flexShrink:0}}>{icon}</div>
-                    <span style={{color:muted,fontSize:14.5}}>{info}</span>
-                  </div>
-                ))}
-              </div>
-              <div style={{display:"flex",gap:10,flexWrap:"wrap"}}>
-                {["GitHub","LinkedIn","Dribbble","Behance"].map(s=>(
-                  <div key={s} style={{padding:"7px 14px",background:card,border:`1px solid ${bdr}`,borderRadius:9,fontSize:13,fontWeight:600,color:muted,cursor:"pointer",transition:"all .25s"}}
-                    onMouseOver={e=>{e.currentTarget.style.borderColor=A;e.currentTarget.style.color=A;}}
-                    onMouseOut={e=>{e.currentTarget.style.borderColor=bdr;e.currentTarget.style.color=muted;}}
-                  >{s}</div>
-                ))}
-              </div>
-            </div>
-            <div style={{background:card,border:`1px solid ${bdr}`,borderRadius:26,padding:36,...fi("contact",.1)}}>
-              {sent ? (
-                <div style={{textAlign:"center",padding:"44px 0"}}>
-                  <div style={{fontSize:60,marginBottom:18}}>🎉</div>
-                  <h3 style={{fontSize:22,fontWeight:700,fontFamily:"Space Grotesk",lineHeight:1.4}}>{t.contact.sent}</h3>
-                </div>
-              ) : (
-                <div style={{display:"flex",flexDirection:"column",gap:14}}>
-                  <div className="form-row" style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:14}}>
-                    <input value={form.name} onChange={e=>setForm(s=>({...s,name:e.target.value}))} placeholder={t.contact.name}/>
-                    <input value={form.email} onChange={e=>setForm(s=>({...s,email:e.target.value}))} placeholder={t.contact.email} type="email"/>
-                  </div>
-                  <select value={form.project} onChange={e=>setForm(s=>({...s,project:e.target.value}))}>
-                    <option value="">{t.contact.project}</option>
-                    <option>UI/UX Design</option>
+              <div class="space-y-1.5">
+                <label class="text-xs font-medium text-gray-700"
+                  >Services interested in</label
+                >
+                <!-- Custom Select/Dropdown visual -->
+                <div class="relative">
+                  <select
+                    class="focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all appearance-none cursor-pointer text-sm text-gray-700 bg-gray-50 w-full border-gray-200 border rounded-lg pt-2.5 pr-4 pb-2.5 pl-4"
+                  >
                     <option>Website Design</option>
-                    <option>Full-Stack Development</option>
-                    <option>Maintenance & Support</option>
+                    <option>UI/UX Design</option>
+                    <option>Full-stack Development</option>
+                    <option>Other</option>
                   </select>
-                  <textarea value={form.msg} onChange={e=>setForm(s=>({...s,msg:e.target.value}))} placeholder={t.contact.msg} rows={5} style={{resize:"none"}}/>
-                  <button className="btn-p" style={{width:"100%",padding:"15px",fontSize:15.5,borderRadius:13}} onClick={send} disabled={sending}>
-                    {sending ? "⏳ "+t.contact.sending : t.contact.send+" ✦"}
-                  </button>
+                  <div
+                    class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400"
+                  >
+                    <iconify-icon
+                      icon="solar:alt-arrow-down-linear"
+                    ></iconify-icon>
+                  </div>
                 </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
+              </div>
 
-      {/* FOOTER */}
-      <footer style={{background:bg,borderTop:`1px solid ${bdr}`,padding:"36px 24px"}}>
-        <div style={{maxWidth:1280,margin:"0 auto",display:"flex",flexDirection:"column",alignItems:"center",gap:18}}>
-          <div style={{display:"flex",alignItems:"center",gap:9}}>
-            <div style={{width:30,height:30,borderRadius:8,background:`linear-gradient(135deg,${A},${A2})`,display:"flex",alignItems:"center",justifyContent:"center"}}>
-              <span style={{color:"#fff",fontWeight:800,fontSize:13}}>W</span>
-            </div>
-            <span style={{fontWeight:700,fontSize:15,fontFamily:"Space Grotesk"}}>WebCraft<span style={{color:A}}>Studio</span></span>
+              <div class="space-y-1.5">
+                <label class="text-xs font-medium text-gray-700"
+                  >Message
+                  <span class="text-gray-400 font-normal"
+                    >(Tin nhắn)</span
+                  ></label
+                >
+                <textarea
+                  rows="4"
+                  placeholder="Tell us about your project..."
+                  class="focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all placeholder:text-gray-400 resize-none text-sm bg-gray-50 w-full border-gray-200 border rounded-lg pt-3 pr-4 pb-3 pl-4"
+                  data-lt-tmp-id="lt-780156"
+                  spellcheck="false"
+                  data-gramm="false"
+                ></textarea>
+              </div>
+
+              <!-- Custom Checkbox -->
+              <div class="flex items-start gap-2 pt-1">
+                <div
+                  class="relative flex items-center justify-center w-4 h-4 mt-0.5"
+                >
+                  <input
+                    type="checkbox"
+                    class="peer appearance-none w-4 h-4 border border-gray-300 rounded bg-white checked:bg-gray-900 checked:border-gray-900 cursor-pointer transition-colors"
+                  />
+                  <iconify-icon
+                    icon="solar:check-read-linear"
+                    class="absolute text-white text-xs opacity-0 peer-checked:opacity-100 pointer-events-none"
+                  ></iconify-icon>
+                </div>
+                <label
+                  class="text-xs text-gray-500 font-light select-none cursor-pointer"
+                >
+                  I agree to the privacy policy.
+                </label>
+              </div>
+
+              <button
+                type="button"
+                class="w-full px-6 py-3 text-sm font-medium text-white bg-gray-900 rounded-xl hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 mt-2"
+              >
+                Send Message
+                <iconify-icon icon="solar:plain-linear"></iconify-icon>
+              </button>
+            </form>
           </div>
-          <div style={{display:"flex",gap:22,flexWrap:"wrap",justifyContent:"center"}}>
-            {Object.entries(t.nav).filter(([k])=>k!=="getQuote").map(([k,v])=>(
-              <span key={k} style={{fontSize:13,color:muted,cursor:"pointer"}}
-                onMouseOver={e=>e.currentTarget.style.color=A}
-                onMouseOut={e=>e.currentTarget.style.color=muted}
-                onClick={()=>go(k)}
-              >{v}</span>
-            ))}
-          </div>
-          <p style={{color:muted,fontSize:12.5,textAlign:"center"}}>{t.footer.copy}</p>
         </div>
-      </footer>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-gray-100 bg-white">
+      <div
+        class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6"
+      >
+        <div class="flex items-center gap-2">
+          <div
+            class="w-6 h-6 bg-blue-600 rounded flex items-center justify-center text-white font-semibold tracking-tighter text-[10px]"
+          >
+            WC
+          </div>
+          <span class="font-medium tracking-tight text-sm text-gray-900"
+            >WebCraft Studio.</span
+          >
+        </div>
+
+        <p class="text-xs text-gray-500 font-light">
+          © 2023 WebCraft Studio. All rights reserved.
+        </p>
+
+        <div class="flex items-center gap-4 text-gray-400">
+          <a href="#" class="hover:text-gray-900 transition-colors"
+            ><iconify-icon
+              icon="solar:figma-linear"
+              class="text-lg"
+            ></iconify-icon
+          ></a>
+          <a href="#" class="hover:text-gray-900 transition-colors"
+            ><iconify-icon
+              icon="solar:github-linear"
+              class="text-lg"
+            ></iconify-icon
+          ></a>
+          <a href="#" class="hover:text-gray-900 transition-colors"
+            ><iconify-icon
+              icon="solar:dribbble-linear"
+              class="text-lg"
+            ></iconify-icon
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Chat Widget Visual Placeholder -->
+    <div
+      class="fixed bottom-6 right-6 w-12 h-12 bg-blue-600 rounded-full shadow-lg shadow-blue-600/20 flex items-center justify-center text-white cursor-pointer hover:bg-blue-700 hover:scale-105 transition-all z-50"
+    >
+      <iconify-icon
+        icon="solar:chat-round-dots-linear"
+        class="text-2xl"
+      ></iconify-icon>
     </div>
-  );
-}
-
-ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
-</script>
-</body>
+  </body>
 </html>
