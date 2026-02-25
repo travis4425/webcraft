@@ -1,57 +1,90 @@
-<html lang="en" class="scroll-smooth"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebCraft Studio | Thiết Kế Website Vietnam</title>
-    <meta name="description" content="WebCraft Studio – Thiết kế website hiện đại, UI/UX và Full-Stack Development tại TP.HCM. Professional web design agency in Ho Chi Minh City, Vietnam."/>
-    <meta name="keywords" content="thiet ke website, web design Vietnam, UI UX design, full-stack development, webcraft studio, website ho chi minh"/>
-    <meta name="robots" content="index, follow"/>
-    <meta property="og:title" content="WebCraft Studio | Web Design & Development"/>
-    <meta property="og:description" content="We design modern websites that grow your business. Based in Ho Chi Minh City, Vietnam."/>
-    <meta property="og:url" content="https://webcraft.id.vn"/>
-    <meta property="og:type" content="website"/>
-    <link rel="canonical" href="https://webcraft.id.vn"/>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563EB'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-weight='700' font-size='14' fill='white'%3EW%E2%9C%A6%3C/text%3E%3C/svg%3E"/>
+    <meta
+      name="description"
+      content="WebCraft Studio – Thiết kế website hiện đại, UI/UX và Full-Stack Development tại TP.HCM. Professional web design agency in Ho Chi Minh City, Vietnam."
+    />
+    <meta
+      name="keywords"
+      content="thiet ke website, web design Vietnam, UI UX design, full-stack development, webcraft studio, website ho chi minh"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta
+      property="og:title"
+      content="WebCraft Studio | Web Design & Development"
+    />
+    <meta
+      property="og:description"
+      content="We design modern websites that grow your business. Based in Ho Chi Minh City, Vietnam."
+    />
+    <meta property="og:url" content="https://webcraft.id.vn" />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://webcraft.id.vn" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563EB'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-weight='700' font-size='14' fill='white'%3EW%E2%9C%A6%3C/text%3E%3C/svg%3E"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = { darkMode: 'class' }
+      tailwind.config = { darkMode: "class" };
     </script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
-        }
-        
-        /* Subtle mesh/gradient background for hero */
-        .hero-bg {
-            background-image: 
-                radial-gradient(at 0% 0%, hsla(217,100%,95%,1) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, hsla(210,100%,97%,1) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, hsla(217,100%,95%,0.5) 0px, transparent 50%);
-        }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #ffffff;
+      }
 
-        /* Hide scrollbar for clean look */
-        ::-webkit-scrollbar {
-            width: 0px;
-        }
-        
-        iconify-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            stroke-width: 1.5;
-        }
+      /* Subtle mesh/gradient background for hero */
+      .hero-bg {
+        background-image:
+          radial-gradient(
+            at 0% 0%,
+            hsla(217, 100%, 95%, 1) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 100% 0%,
+            hsla(210, 100%, 97%, 1) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 100% 100%,
+            hsla(217, 100%, 95%, 0.5) 0px,
+            transparent 50%
+          );
+      }
+
+      /* Hide scrollbar for clean look */
+      ::-webkit-scrollbar {
+        width: 0px;
+      }
+
+      iconify-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        stroke-width: 1.5;
+      }
     </style>
 
     <style id="dark-mode-styles">
-      .dark, .dark body {
+      .dark,
+      .dark body {
         background-color: #0f1117 !important;
         color: #e2e8f0 !important;
       }
       /* Nav */
       .dark nav {
-        background: rgba(10,12,18,0.9) !important;
+        background: rgba(10, 12, 18, 0.9) !important;
         border-color: #1e2535 !important;
       }
       /* All white backgrounds */
@@ -90,37 +123,48 @@
         border-color: #1e2535 !important;
       }
       /* Inputs */
-      .dark input, .dark textarea, .dark select {
+      .dark input,
+      .dark textarea,
+      .dark select {
         background-color: #0f1117 !important;
         color: #e2e8f0 !important;
         border-color: #1e2535 !important;
       }
-      .dark input::placeholder, .dark textarea::placeholder {
+      .dark input::placeholder,
+      .dark textarea::placeholder {
         color: #475569 !important;
       }
       /* Hero gradient */
       .dark .hero-bg {
         background-image:
-          radial-gradient(at 0% 0%, hsla(217,40%,8%,1) 0px, transparent 50%),
-          radial-gradient(at 100% 0%, hsla(210,40%,6%,1) 0px, transparent 50%),
-          radial-gradient(at 100% 100%, hsla(217,40%,8%,0.5) 0px, transparent 50%) !important;
+          radial-gradient(at 0% 0%, hsla(217, 40%, 8%, 1) 0px, transparent 50%),
+          radial-gradient(
+            at 100% 0%,
+            hsla(210, 40%, 6%, 1) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 100% 100%,
+            hsla(217, 40%, 8%, 0.5) 0px,
+            transparent 50%
+          ) !important;
         background-color: #0f1117 !important;
       }
       /* Cards / sections */
       .dark [class*="shadow"] {
-        box-shadow: 0 4px 24px rgba(0,0,0,0.4) !important;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4) !important;
       }
       .dark [class*="bg-blue-50"] {
-        background-color: rgba(37,99,235,0.1) !important;
+        background-color: rgba(37, 99, 235, 0.1) !important;
       }
       .dark [class*="bg-purple-50"] {
-        background-color: rgba(124,58,237,0.1) !important;
+        background-color: rgba(124, 58, 237, 0.1) !important;
       }
       .dark [class*="bg-pink-50"] {
-        background-color: rgba(236,72,153,0.1) !important;
+        background-color: rgba(236, 72, 153, 0.1) !important;
       }
       .dark [class*="bg-orange-50"] {
-        background-color: rgba(234,88,12,0.1) !important;
+        background-color: rgba(234, 88, 12, 0.1) !important;
       }
       /* Footer */
       .dark footer {
@@ -141,577 +185,1065 @@
         border-top-color: #0f1117 !important;
       }
     </style>
-</head>
-<body class="text-gray-900 antialiased selection:bg-blue-100 selection:text-blue-900 relative">
-
+  </head>
+  <body
+    class="text-gray-900 antialiased selection:bg-blue-100 selection:text-blue-900 relative"
+  >
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/80 border-b border-gray-100 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <!-- Logo -->
-            <a href="#" class="flex items-center gap-2 group">
-                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-semibold tracking-tighter text-sm group-hover:bg-blue-700 transition-colors">W✦</div>
-                <span class="font-semibold tracking-tighter text-base hidden sm:block">WEBCRAFT</span>
-            </a>
+    <nav
+      class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/80 border-b border-gray-100 transition-all duration-300"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between"
+      >
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2 group">
+          <div
+            class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-semibold tracking-tighter text-sm group-hover:bg-blue-700 transition-colors"
+          >
+            W✦
+          </div>
+          <span class="font-semibold tracking-tighter text-base hidden sm:block"
+            >WEBCRAFT</span
+          >
+        </a>
 
-            <!-- Desktop Links -->
-            <div class="hidden md:flex items-center gap-8">
-                <a href="#about" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors" data-en="About" data-vi="Giới thiệu">About</a>
-                <a href="#services" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors" data-en="Services" data-vi="Dịch vụ">Services</a>
-                <a href="#portfolio" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors" data-en="Work" data-vi="Dự án">Work</a>
-                <a href="#contact" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors" data-en="Contact" data-vi="Liên hệ">Contact</a>
-            </div>
-
-            <!-- Controls (Lang, Theme, CTA) -->
-            <div class="flex items-center gap-4">
-                <!-- Custom Lang Toggle (Visual) -->
-                <div class="hidden sm:flex items-center bg-gray-50 border border-gray-200 rounded-full p-1">
-                    <button id="btn-en" onclick="setLang('en')" class="px-3 py-1 rounded-full bg-white shadow-sm text-xs font-medium text-gray-900 transition-all">EN</button>
-                    <button id="btn-vi" onclick="setLang('vi')" class="px-3 py-1 rounded-full text-xs font-medium text-gray-500 hover:text-gray-900 transition-all">VI</button>
-                </div>
-
-                <!-- Custom Theme Toggle (Visual) -->
-                <button id="theme-btn" onclick="toggleTheme()" class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">
-                    <iconify-icon id="theme-icon" icon="solar:sun-linear" class="text-lg"></iconify-icon>
-                </button>
-
-                <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-full hover:bg-gray-800 transition-colors" data-en="Get a Quote" data-vi="Nhận báo giá">
-                    Get a Quote
-                </a>
-                
-                <!-- Mobile Menu Button -->
-                <button class="md:hidden text-gray-500 hover:text-gray-900">
-                    <iconify-icon icon="solar:hamburger-menu-linear" class="text-xl"></iconify-icon>
-                </button>
-            </div>
+        <!-- Desktop Links -->
+        <div class="hidden md:flex items-center gap-8">
+          <a
+            href="#about"
+            class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors"
+            data-en="About"
+            data-vi="Giới thiệu"
+            >About</a
+          >
+          <a
+            href="#services"
+            class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors"
+            data-en="Services"
+            data-vi="Dịch vụ"
+            >Services</a
+          >
+          <a
+            href="#portfolio"
+            class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors"
+            data-en="Work"
+            data-vi="Dự án"
+            >Work</a
+          >
+          <a
+            href="#contact"
+            class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors"
+            data-en="Contact"
+            data-vi="Liên hệ"
+            >Contact</a
+          >
         </div>
+
+        <!-- Controls (Lang, Theme, CTA) -->
+        <div class="flex items-center gap-4">
+          <!-- Custom Lang Toggle (Visual) -->
+          <div
+            class="hidden sm:flex items-center bg-gray-50 border border-gray-200 rounded-full p-1"
+          >
+            <button
+              id="btn-en"
+              onclick="setLang('en')"
+              class="px-3 py-1 rounded-full bg-white shadow-sm text-xs font-medium text-gray-900 transition-all"
+            >
+              EN
+            </button>
+            <button
+              id="btn-vi"
+              onclick="setLang('vi')"
+              class="px-3 py-1 rounded-full text-xs font-medium text-gray-500 hover:text-gray-900 transition-all"
+            >
+              VI
+            </button>
+          </div>
+
+          <!-- Custom Theme Toggle (Visual) -->
+          <button
+            id="theme-btn"
+            onclick="toggleTheme()"
+            class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors"
+          >
+            <iconify-icon
+              id="theme-icon"
+              icon="solar:sun-linear"
+              class="text-lg"
+            ></iconify-icon>
+          </button>
+
+          <a
+            href="#contact"
+            class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-full hover:bg-gray-800 transition-colors"
+            data-en="Get a Quote"
+            data-vi="Nhận báo giá"
+          >
+            Get a Quote
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button class="md:hidden text-gray-500 hover:text-gray-900">
+            <iconify-icon
+              icon="solar:hamburger-menu-linear"
+              class="text-xl"
+            ></iconify-icon>
+          </button>
+        </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="md:pt-48 md:pb-32 hero-bg overflow-hidden flex flex-col min-h-[90vh] pt-32 pb-20 relative items-center justify-center">
-        <div class="max-w-4xl mx-auto px-6 text-center z-10">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-medium mb-8">
-                <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-                <span data-en="Available for new projects" data-vi="Đang nhận dự án mới">Available for new projects</span>
-            </div>
-            
-            <h1 class="md:text-6xl lg:text-7xl leading-tight text-4xl font-semibold text-gray-900 tracking-tight mb-6">
-                <span data-en="We Design Modern Websites" data-vi="Chúng Tôi Thiết Kế Website">We Design Modern Websites</span> <br class="hidden md:block"> <span data-en="That Grow Your Business" data-vi="Giúp Phát Triển Doanh Nghiệp">That Grow Your Business</span>
-            </h1>
-            
-            <p class="text-base md:text-lg text-gray-500 mb-10 max-w-2xl mx-auto font-light">
-                <span class="block mb-2" data-en="Creating clean, fast, and user-centric digital experiences for startups and businesses." data-vi="Tạo ra trải nghiệm số hiện đại, nhanh, tập trung vào người dùng cho doanh nghiệp.">Creating clean, fast, and user-centric digital experiences for startups and businesses.</span>
-                <span class="block text-sm text-gray-400 italic">Chúng tôi thiết kế website hiện đại giúp phát triển doanh nghiệp của bạn.</span>
-            </p>
-            
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#portfolio" class="w-full sm:w-auto px-6 py-3 text-sm font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-all shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] hover:shadow-[0_6px_20px_rgba(37,99,235,0.23)] flex items-center justify-center gap-2">
-                    View Portfolio
-                    <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
-                </a>
-                <a href="#contact" class="w-full sm:w-auto px-6 py-3 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-full hover:bg-gray-50 transition-colors flex items-center justify-center">
-                    Get a Quote
-                </a>
-            </div>
+    <section
+      class="md:pt-48 md:pb-32 hero-bg overflow-hidden flex flex-col min-h-[90vh] pt-32 pb-20 relative items-center justify-center"
+    >
+      <div class="max-w-4xl mx-auto px-6 text-center z-10">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-medium mb-8"
+        >
+          <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+          <span
+            data-en="Available for new projects"
+            data-vi="Đang nhận dự án mới"
+            >Available for new projects</span
+          >
         </div>
+
+        <h1
+          class="md:text-6xl lg:text-7xl leading-tight text-4xl font-semibold text-gray-900 tracking-tight mb-6"
+        >
+          <span
+            data-en="We Design Modern Websites"
+            data-vi="Chúng Tôi Thiết Kế Website"
+            >We Design Modern Websites</span
+          >
+          <br class="hidden md:block" />
+          <span
+            data-en="That Grow Your Business"
+            data-vi="Giúp Phát Triển Doanh Nghiệp"
+            >That Grow Your Business</span
+          >
+        </h1>
+
+        <p
+          class="text-base md:text-lg text-gray-500 mb-10 max-w-2xl mx-auto font-light"
+        >
+          <span
+            class="block mb-2"
+            data-en="Creating clean, fast, and user-centric digital experiences for startups and businesses."
+            data-vi="Tạo ra trải nghiệm số hiện đại, nhanh, tập trung vào người dùng cho doanh nghiệp."
+            >Creating clean, fast, and user-centric digital experiences for
+            startups and businesses.</span
+          >
+          <span class="block text-sm text-gray-400 italic"
+            >Chúng tôi thiết kế website hiện đại giúp phát triển doanh nghiệp
+            của bạn.</span
+          >
+        </p>
+
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <a
+            href="#portfolio"
+            class="w-full sm:w-auto px-6 py-3 text-sm font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-all shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] hover:shadow-[0_6px_20px_rgba(37,99,235,0.23)] flex items-center justify-center gap-2"
+          >
+            View Portfolio
+            <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+          </a>
+          <a
+            href="#contact"
+            class="w-full sm:w-auto px-6 py-3 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-full hover:bg-gray-50 transition-colors flex items-center justify-center"
+          >
+            Get a Quote
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- About Section (Team) -->
     <section id="about" class="py-24 bg-white border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-semibold tracking-tight text-gray-900 mb-2">Meet the Team</h2>
-                <p class="text-sm text-gray-500 font-light">Đội ngũ chuyên gia của chúng tôi</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <!-- Member 1 -->
-                <div class="group transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:border-gray-200 flex flex-col text-center bg-white border-gray-100 border rounded-3xl pt-6 pr-6 pb-6 pl-6 relative items-center">
-                    <div class="w-24 h-24 rounded-full bg-gray-50 border border-gray-100 mb-4 overflow-hidden relative">
-                        <!-- Placeholder Avatar -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center">
-                            <iconify-icon icon="solar:user-circle-linear" class="text-3xl text-blue-200"></iconify-icon>
-                        </div>
-                    </div>
-                    <h3 class="text-lg font-medium text-gray-900">Alex Nguyen</h3>
-                    <p class="text-sm text-blue-600 font-medium mb-3">UI/UX Designer</p>
-                    <p class="text-sm text-gray-500 mb-4 font-light">Crafting intuitive and aesthetically pleasing interfaces focusing on user experience.</p>
-                    <div class="flex gap-2 mt-auto">
-                        <span class="px-2 py-1 bg-gray-50 border border-gray-100 text-gray-500 rounded text-xs">Figma</span>
-                        <span class="px-2 py-1 bg-gray-50 border border-gray-100 text-gray-500 rounded text-xs">Framer</span>
-                    </div>
-                </div>
-
-                <!-- Member 2 -->
-                <div class="group relative bg-white border border-gray-100 rounded-3xl p-6 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:border-gray-200 flex flex-col items-center text-center">
-                    <div class="w-24 h-24 rounded-full bg-gray-50 border border-gray-100 mb-4 overflow-hidden relative">
-                        <div class="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 flex items-center justify-center">
-                            <iconify-icon icon="solar:user-circle-linear" class="text-3xl text-purple-200"></iconify-icon>
-                        </div>
-                    </div>
-                    <h3 class="text-lg font-medium text-gray-900">Minh Tran</h3>
-                    <p class="text-sm text-purple-600 font-medium mb-3">Frontend Developer</p>
-                    <p class="text-sm text-gray-500 mb-4 font-light">Building fast, responsive, and interactive web applications with modern frameworks.</p>
-                    <div class="flex gap-2 mt-auto">
-                        <span class="px-2 py-1 bg-gray-50 border border-gray-100 text-gray-500 rounded text-xs">React</span>
-                        <span class="px-2 py-1 bg-gray-50 border border-gray-100 text-gray-500 rounded text-xs">Tailwind</span>
-                    </div>
-                </div>
-
-                <!-- Member 3 -->
-                <div class="group relative bg-white border border-gray-100 rounded-3xl p-6 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:border-gray-200 flex flex-col items-center text-center">
-                    <div class="w-24 h-24 rounded-full bg-gray-50 border border-gray-100 mb-4 overflow-hidden relative">
-                        <div class="absolute inset-0 bg-gradient-to-br from-pink-50 to-teal-50 flex items-center justify-center">
-                            <iconify-icon icon="solar:user-circle-linear" class="text-3xl text-pink-200"></iconify-icon>
-                        </div>
-                    </div>
-                    <h3 class="text-lg font-medium text-gray-900">David Pham</h3>
-                    <p class="text-sm text-pink-600 font-medium mb-3">Backend Developer</p>
-                    <p class="text-sm text-gray-500 mb-4 font-light">Architecting robust APIs, managing databases, and ensuring server performance.</p>
-                    <div class="flex gap-2 mt-auto">
-                        <span class="px-2 py-1 bg-gray-50 border border-gray-100 text-gray-500 rounded text-xs">Node.js</span>
-                        <span class="px-2 py-1 bg-gray-50 border border-gray-100 text-gray-500 rounded text-xs">PostgreSQL</span>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-semibold tracking-tight text-gray-900 mb-2">
+            Meet the Team
+          </h2>
+          <p class="text-sm text-gray-500 font-light">
+            Đội ngũ chuyên gia của chúng tôi
+          </p>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <!-- Member 1 -->
+          <div
+            class="group transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:border-gray-200 flex flex-col text-center bg-white border-gray-100 border rounded-3xl pt-6 pr-6 pb-6 pl-6 relative items-center"
+          >
+            <div
+              class="w-24 h-24 rounded-full bg-gray-50 border border-gray-100 mb-4 overflow-hidden relative"
+            >
+              <!-- Placeholder Avatar -->
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center"
+              >
+                <iconify-icon
+                  icon="solar:user-circle-linear"
+                  class="text-3xl text-blue-200"
+                ></iconify-icon>
+              </div>
+            </div>
+            <h3 class="text-lg font-medium text-gray-900">Alex Nguyen</h3>
+            <p class="text-sm text-blue-600 font-medium mb-3">UI/UX Designer</p>
+            <p class="text-sm text-gray-500 mb-4 font-light">
+              Crafting intuitive and aesthetically pleasing interfaces focusing
+              on user experience.
+            </p>
+            <div class="flex gap-2 mt-auto">
+              <span
+                class="px-2 py-1 bg-gray-50 border border-gray-100 text-gray-500 rounded text-xs"
+                >Figma</span
+              >
+              <span
+                class="px-2 py-1 bg-gray-50 border border-gray-100 text-gray-500 rounded text-xs"
+                >Framer</span
+              >
+            </div>
+          </div>
+
+          <!-- Member 2 -->
+          <div
+            class="group relative bg-white border border-gray-100 rounded-3xl p-6 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:border-gray-200 flex flex-col items-center text-center"
+          >
+            <div
+              class="w-24 h-24 rounded-full bg-gray-50 border border-gray-100 mb-4 overflow-hidden relative"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 flex items-center justify-center"
+              >
+                <iconify-icon
+                  icon="solar:user-circle-linear"
+                  class="text-3xl text-purple-200"
+                ></iconify-icon>
+              </div>
+            </div>
+            <h3 class="text-lg font-medium text-gray-900">Minh Tran</h3>
+            <p class="text-sm text-purple-600 font-medium mb-3">
+              Frontend Developer
+            </p>
+            <p class="text-sm text-gray-500 mb-4 font-light">
+              Building fast, responsive, and interactive web applications with
+              modern frameworks.
+            </p>
+            <div class="flex gap-2 mt-auto">
+              <span
+                class="px-2 py-1 bg-gray-50 border border-gray-100 text-gray-500 rounded text-xs"
+                >React</span
+              >
+              <span
+                class="px-2 py-1 bg-gray-50 border border-gray-100 text-gray-500 rounded text-xs"
+                >Tailwind</span
+              >
+            </div>
+          </div>
+
+          <!-- Member 3 -->
+          <div
+            class="group relative bg-white border border-gray-100 rounded-3xl p-6 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:border-gray-200 flex flex-col items-center text-center"
+          >
+            <div
+              class="w-24 h-24 rounded-full bg-gray-50 border border-gray-100 mb-4 overflow-hidden relative"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-pink-50 to-teal-50 flex items-center justify-center"
+              >
+                <iconify-icon
+                  icon="solar:user-circle-linear"
+                  class="text-3xl text-pink-200"
+                ></iconify-icon>
+              </div>
+            </div>
+            <h3 class="text-lg font-medium text-gray-900">David Pham</h3>
+            <p class="text-sm text-pink-600 font-medium mb-3">
+              Backend Developer
+            </p>
+            <p class="text-sm text-gray-500 mb-4 font-light">
+              Architecting robust APIs, managing databases, and ensuring server
+              performance.
+            </p>
+            <div class="flex gap-2 mt-auto">
+              <span
+                class="px-2 py-1 bg-gray-50 border border-gray-100 text-gray-500 rounded text-xs"
+                >Node.js</span
+              >
+              <span
+                class="px-2 py-1 bg-gray-50 border border-gray-100 text-gray-500 rounded text-xs"
+                >PostgreSQL</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="py-24 bg-gray-50/50 border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-                <div>
-                    <h2 class="text-3xl font-semibold tracking-tight text-gray-900 mb-2">Our Services</h2>
-                    <p class="text-sm text-gray-500 font-light max-w-lg">Comprehensive web solutions tailored to your business needs. <br> <span class="italic text-gray-400">Giải pháp toàn diện cho doanh nghiệp của bạn.</span></p>
-                </div>
-                <!-- Custom styling visual toggle for pricing plans -->
-                <div class="flex items-center bg-gray-100/50 border border-gray-200 rounded-full p-1 w-fit">
-                    <button class="px-4 py-1.5 rounded-full bg-white shadow-sm border border-gray-100 text-xs font-medium text-gray-900">Monthly</button>
-                    <button class="px-4 py-1.5 rounded-full text-xs font-medium text-gray-500 hover:text-gray-900 transition-colors">Project based</button>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Service 1 -->
-                <div class="bg-white p-6 rounded-3xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all group cursor-default">
-                    <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition-transform">
-                        <iconify-icon icon="solar:pen-new-square-linear" class="text-xl"></iconify-icon>
-                    </div>
-                    <h3 class="text-base font-medium text-gray-900 mb-2">UI/UX Design</h3>
-                    <p class="text-sm text-gray-500 font-light mb-4">Wireframes, prototyping, and high-fidelity interfaces.</p>
-                    <div class="mt-auto border-t border-gray-50 pt-4 flex items-center justify-between">
-                        <span class="text-xs text-gray-400">Thiết kế giao diện</span>
-                        <iconify-icon icon="solar:arrow-right-linear" class="text-gray-300 group-hover:text-blue-600 transition-colors"></iconify-icon>
-                    </div>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="bg-white p-6 rounded-3xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all group cursor-default">
-                    <div class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600 mb-6 group-hover:scale-110 transition-transform">
-                        <iconify-icon icon="solar:devices-linear" class="text-xl"></iconify-icon>
-                    </div>
-                    <h3 class="text-base font-medium text-gray-900 mb-2">Web Design</h3>
-                    <p class="text-sm text-gray-500 font-light mb-4">Responsive marketing websites and landing pages.</p>
-                    <div class="mt-auto border-t border-gray-50 pt-4 flex items-center justify-between">
-                        <span class="text-xs text-gray-400">Thiết kế website</span>
-                        <iconify-icon icon="solar:arrow-right-linear" class="text-gray-300 group-hover:text-purple-600 transition-colors"></iconify-icon>
-                    </div>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="bg-white p-6 rounded-3xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all group cursor-default">
-                    <div class="w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center text-pink-600 mb-6 group-hover:scale-110 transition-transform">
-                        <iconify-icon icon="solar:code-square-linear" class="text-xl"></iconify-icon>
-                    </div>
-                    <h3 class="text-base font-medium text-gray-900 mb-2">Full-stack Dev</h3>
-                    <p class="text-sm text-gray-500 font-light mb-4">Custom web applications with robust backend systems.</p>
-                    <div class="mt-auto border-t border-gray-50 pt-4 flex items-center justify-between">
-                        <span class="text-xs text-gray-400">Phát triển phần mềm</span>
-                        <iconify-icon icon="solar:arrow-right-linear" class="text-gray-300 group-hover:text-pink-600 transition-colors"></iconify-icon>
-                    </div>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="bg-white p-6 rounded-3xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all group cursor-default">
-                    <div class="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center text-orange-600 mb-6 group-hover:scale-110 transition-transform">
-                        <iconify-icon icon="solar:settings-linear" class="text-xl"></iconify-icon>
-                    </div>
-                    <h3 class="text-base font-medium text-gray-900 mb-2">Maintenance</h3>
-                    <p class="text-sm text-gray-500 font-light mb-4">Ongoing support, updates, and performance optimization.</p>
-                    <div class="mt-auto border-t border-gray-50 pt-4 flex items-center justify-between">
-                        <span class="text-xs text-gray-400">Bảo trì &amp; Hỗ trợ</span>
-                        <iconify-icon icon="solar:arrow-right-linear" class="text-gray-300 group-hover:text-orange-600 transition-colors"></iconify-icon>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-6">
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6"
+        >
+          <div>
+            <h2
+              class="text-3xl font-semibold tracking-tight text-gray-900 mb-2"
+            >
+              Our Services
+            </h2>
+            <p class="text-sm text-gray-500 font-light max-w-lg">
+              Comprehensive web solutions tailored to your business needs.
+              <br />
+              <span class="italic text-gray-400"
+                >Giải pháp toàn diện cho doanh nghiệp của bạn.</span
+              >
+            </p>
+          </div>
+          <!-- Custom styling visual toggle for pricing plans -->
+          <div
+            class="flex items-center bg-gray-100/50 border border-gray-200 rounded-full p-1 w-fit"
+          >
+            <button
+              class="px-4 py-1.5 rounded-full bg-white shadow-sm border border-gray-100 text-xs font-medium text-gray-900"
+            >
+              Monthly
+            </button>
+            <button
+              class="px-4 py-1.5 rounded-full text-xs font-medium text-gray-500 hover:text-gray-900 transition-colors"
+            >
+              Project based
+            </button>
+          </div>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Service 1 -->
+          <div
+            class="bg-white p-6 rounded-3xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all group cursor-default"
+          >
+            <div
+              class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition-transform"
+            >
+              <iconify-icon
+                icon="solar:pen-new-square-linear"
+                class="text-xl"
+              ></iconify-icon>
+            </div>
+            <h3 class="text-base font-medium text-gray-900 mb-2">
+              UI/UX Design
+            </h3>
+            <p class="text-sm text-gray-500 font-light mb-4">
+              Wireframes, prototyping, and high-fidelity interfaces.
+            </p>
+            <div
+              class="mt-auto border-t border-gray-50 pt-4 flex items-center justify-between"
+            >
+              <span class="text-xs text-gray-400">Thiết kế giao diện</span>
+              <iconify-icon
+                icon="solar:arrow-right-linear"
+                class="text-gray-300 group-hover:text-blue-600 transition-colors"
+              ></iconify-icon>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div
+            class="bg-white p-6 rounded-3xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all group cursor-default"
+          >
+            <div
+              class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600 mb-6 group-hover:scale-110 transition-transform"
+            >
+              <iconify-icon
+                icon="solar:devices-linear"
+                class="text-xl"
+              ></iconify-icon>
+            </div>
+            <h3 class="text-base font-medium text-gray-900 mb-2">Web Design</h3>
+            <p class="text-sm text-gray-500 font-light mb-4">
+              Responsive marketing websites and landing pages.
+            </p>
+            <div
+              class="mt-auto border-t border-gray-50 pt-4 flex items-center justify-between"
+            >
+              <span class="text-xs text-gray-400">Thiết kế website</span>
+              <iconify-icon
+                icon="solar:arrow-right-linear"
+                class="text-gray-300 group-hover:text-purple-600 transition-colors"
+              ></iconify-icon>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div
+            class="bg-white p-6 rounded-3xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all group cursor-default"
+          >
+            <div
+              class="w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center text-pink-600 mb-6 group-hover:scale-110 transition-transform"
+            >
+              <iconify-icon
+                icon="solar:code-square-linear"
+                class="text-xl"
+              ></iconify-icon>
+            </div>
+            <h3 class="text-base font-medium text-gray-900 mb-2">
+              Full-stack Dev
+            </h3>
+            <p class="text-sm text-gray-500 font-light mb-4">
+              Custom web applications with robust backend systems.
+            </p>
+            <div
+              class="mt-auto border-t border-gray-50 pt-4 flex items-center justify-between"
+            >
+              <span class="text-xs text-gray-400">Phát triển phần mềm</span>
+              <iconify-icon
+                icon="solar:arrow-right-linear"
+                class="text-gray-300 group-hover:text-pink-600 transition-colors"
+              ></iconify-icon>
+            </div>
+          </div>
+
+          <!-- Service 4 -->
+          <div
+            class="bg-white p-6 rounded-3xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all group cursor-default"
+          >
+            <div
+              class="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center text-orange-600 mb-6 group-hover:scale-110 transition-transform"
+            >
+              <iconify-icon
+                icon="solar:settings-linear"
+                class="text-xl"
+              ></iconify-icon>
+            </div>
+            <h3 class="text-base font-medium text-gray-900 mb-2">
+              Maintenance
+            </h3>
+            <p class="text-sm text-gray-500 font-light mb-4">
+              Ongoing support, updates, and performance optimization.
+            </p>
+            <div
+              class="mt-auto border-t border-gray-50 pt-4 flex items-center justify-between"
+            >
+              <span class="text-xs text-gray-400">Bảo trì &amp; Hỗ trợ</span>
+              <iconify-icon
+                icon="solar:arrow-right-linear"
+                class="text-gray-300 group-hover:text-orange-600 transition-colors"
+              ></iconify-icon>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="py-24 bg-white border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-                <div>
-                    <h2 class="text-3xl font-semibold tracking-tight text-gray-900 mb-2">Selected Work</h2>
-                    <p class="text-sm text-gray-500 font-light">Dự án tiêu biểu</p>
-                </div>
-                
-                <!-- Filter Dropdown (Custom Visual) -->
-                <div class="relative inline-block text-left w-full sm:w-auto">
-                    <button type="button" class="inline-flex w-full sm:w-40 justify-between items-center gap-x-1.5 rounded-lg bg-white px-3 py-2 text-sm text-gray-900 shadow-sm ring-1 ring-inset ring-gray-200 hover:bg-gray-50">
-                        All Projects
-                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-gray-400"></iconify-icon>
-                    </button>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-6">
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6"
+        >
+          <div>
+            <h2
+              class="text-3xl font-semibold tracking-tight text-gray-900 mb-2"
+            >
+              Selected Work
+            </h2>
+            <p class="text-sm text-gray-500 font-light">Dự án tiêu biểu</p>
+          </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Project 1 -->
-                <div class="group cursor-pointer">
-                    <div class="relative w-full aspect-[4/3] rounded-2xl bg-gray-100 overflow-hidden mb-4 border border-gray-100">
-                        <!-- Abstract placeholder representing project screenshot -->
-                        <div class="absolute inset-0 bg-gradient-to-tr from-gray-50 to-gray-200 flex flex-col">
-                            <div class="h-8 bg-white/50 border-b border-white/20 flex items-center px-4 gap-1.5">
-                                <div class="w-2 h-2 rounded-full bg-red-300"></div>
-                                <div class="w-2 h-2 rounded-full bg-amber-300"></div>
-                                <div class="w-2 h-2 rounded-full bg-green-300"></div>
-                            </div>
-                            <div class="flex-1 p-6 flex flex-col gap-4">
-                                <div class="w-1/3 h-4 bg-white/60 rounded"></div>
-                                <div class="w-full h-24 bg-white/60 rounded-xl"></div>
-                                <div class="w-2/3 h-12 bg-white/60 rounded-xl"></div>
-                            </div>
-                        </div>
-                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                            <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-gray-900 shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform">
-                                <iconify-icon icon="solar:arrow-right-up-linear" class="text-xl"></iconify-icon>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex items-start justify-between">
-                        <div>
-                            <h3 class="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition-colors">Fintech Dashboard</h3>
-                            <p class="text-sm text-gray-500 font-light mt-1">Financial data visualization platform for enterprise.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-2 mt-3">
-                        <span class="text-xs px-2 py-1 rounded-md bg-gray-50 text-gray-600 border border-gray-100">React</span>
-                        <span class="text-xs px-2 py-1 rounded-md bg-gray-50 text-gray-600 border border-gray-100">Tailwind</span>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="group cursor-pointer">
-                    <div class="relative w-full aspect-[4/3] rounded-2xl bg-gray-100 overflow-hidden mb-4 border border-gray-100">
-                        <div class="absolute inset-0 bg-gradient-to-bl from-blue-50 to-indigo-50 flex items-center justify-center p-8">
-                             <div class="w-full h-full border border-blue-100/50 rounded-xl bg-white/40 backdrop-blur-sm flex flex-col items-center justify-center gap-4 shadow-sm">
-                                 <div class="w-16 h-16 rounded-full bg-blue-100/50"></div>
-                                 <div class="w-32 h-3 bg-blue-100/50 rounded"></div>
-                             </div>
-                        </div>
-                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                            <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-gray-900 shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform">
-                                <iconify-icon icon="solar:arrow-right-up-linear" class="text-xl"></iconify-icon>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex items-start justify-between">
-                        <div class="">
-                            <h3 class="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition-colors">E-commerce App</h3>
-                            <p class="text-sm text-gray-500 font-light mt-1">Modern shopping experience with seamless checkout.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-2 mt-3">
-                        <span class="text-xs px-2 py-1 rounded-md bg-gray-50 text-gray-600 border border-gray-100">Next.js</span>
-                        <span class="text-xs px-2 py-1 rounded-md bg-gray-50 text-gray-600 border border-gray-100">Stripe</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-12 text-center">
-                <button class="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
-                    View all projects
-                    <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
-                </button>
-            </div>
+          <!-- Filter Dropdown (Custom Visual) -->
+          <div class="relative inline-block text-left w-full sm:w-auto">
+            <button
+              type="button"
+              class="inline-flex w-full sm:w-40 justify-between items-center gap-x-1.5 rounded-lg bg-white px-3 py-2 text-sm text-gray-900 shadow-sm ring-1 ring-inset ring-gray-200 hover:bg-gray-50"
+            >
+              All Projects
+              <iconify-icon
+                icon="solar:alt-arrow-down-linear"
+                class="text-gray-400"
+              ></iconify-icon>
+            </button>
+          </div>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Project 1 -->
+          <div class="group cursor-pointer">
+            <div
+              class="relative w-full aspect-[4/3] rounded-2xl bg-gray-100 overflow-hidden mb-4 border border-gray-100"
+            >
+              <!-- Abstract placeholder representing project screenshot -->
+              <div
+                class="absolute inset-0 bg-gradient-to-tr from-gray-50 to-gray-200 flex flex-col"
+              >
+                <div
+                  class="h-8 bg-white/50 border-b border-white/20 flex items-center px-4 gap-1.5"
+                >
+                  <div class="w-2 h-2 rounded-full bg-red-300"></div>
+                  <div class="w-2 h-2 rounded-full bg-amber-300"></div>
+                  <div class="w-2 h-2 rounded-full bg-green-300"></div>
+                </div>
+                <div class="flex-1 p-6 flex flex-col gap-4">
+                  <div class="w-1/3 h-4 bg-white/60 rounded"></div>
+                  <div class="w-full h-24 bg-white/60 rounded-xl"></div>
+                  <div class="w-2/3 h-12 bg-white/60 rounded-xl"></div>
+                </div>
+              </div>
+              <div
+                class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-gray-900 shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform"
+                >
+                  <iconify-icon
+                    icon="solar:arrow-right-up-linear"
+                    class="text-xl"
+                  ></iconify-icon>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-start justify-between">
+              <div>
+                <h3
+                  class="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition-colors"
+                >
+                  Fintech Dashboard
+                </h3>
+                <p class="text-sm text-gray-500 font-light mt-1">
+                  Financial data visualization platform for enterprise.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-2 mt-3">
+              <span
+                class="text-xs px-2 py-1 rounded-md bg-gray-50 text-gray-600 border border-gray-100"
+                >React</span
+              >
+              <span
+                class="text-xs px-2 py-1 rounded-md bg-gray-50 text-gray-600 border border-gray-100"
+                >Tailwind</span
+              >
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="group cursor-pointer">
+            <div
+              class="relative w-full aspect-[4/3] rounded-2xl bg-gray-100 overflow-hidden mb-4 border border-gray-100"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-bl from-blue-50 to-indigo-50 flex items-center justify-center p-8"
+              >
+                <div
+                  class="w-full h-full border border-blue-100/50 rounded-xl bg-white/40 backdrop-blur-sm flex flex-col items-center justify-center gap-4 shadow-sm"
+                >
+                  <div class="w-16 h-16 rounded-full bg-blue-100/50"></div>
+                  <div class="w-32 h-3 bg-blue-100/50 rounded"></div>
+                </div>
+              </div>
+              <div
+                class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-gray-900 shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform"
+                >
+                  <iconify-icon
+                    icon="solar:arrow-right-up-linear"
+                    class="text-xl"
+                  ></iconify-icon>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-start justify-between">
+              <div class="">
+                <h3
+                  class="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition-colors"
+                >
+                  E-commerce App
+                </h3>
+                <p class="text-sm text-gray-500 font-light mt-1">
+                  Modern shopping experience with seamless checkout.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-2 mt-3">
+              <span
+                class="text-xs px-2 py-1 rounded-md bg-gray-50 text-gray-600 border border-gray-100"
+                >Next.js</span
+              >
+              <span
+                class="text-xs px-2 py-1 rounded-md bg-gray-50 text-gray-600 border border-gray-100"
+                >Stripe</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <button
+            class="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+          >
+            View all projects
+            <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+          </button>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="overflow-hidden bg-gray-50/30 border-gray-100 border-t pt-24 pb-24 relative" id="contact">
-        <!-- Abstract background shape -->
-        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-50/50 blur-3xl -z-10"></div>
-        
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                <!-- Contact Info -->
-                <div class="">
-                    <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight text-gray-900 mb-4"><span data-en="Start Your Project Today" data-vi="Bắt Đầu Dự Án Ngay">Start Your Project Today</span></h2>
-                    <p class="text-base text-gray-500 font-light mb-8 max-w-md">
-                        <span data-en="Have an idea? Let's build something great together. Fill out the form or reach out directly." data-vi="Có ý tưởng? Hãy liên hệ với chúng tôi. Điền form hoặc nhắn tin trực tiếp.">Have an idea? Let's build something great together. Fill out the form or reach out directly.</span>
-                        <br>
-                        <span class="text-sm italic text-gray-400 mt-2 block">Bắt đầu dự án của bạn ngay hôm nay. Vui lòng để lại thông tin liên hệ.</span>
-                    </p>
+    <section
+      class="overflow-hidden bg-gray-50/30 border-gray-100 border-t pt-24 pb-24 relative"
+      id="contact"
+    >
+      <!-- Abstract background shape -->
+      <div
+        class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-50/50 blur-3xl -z-10"
+      ></div>
 
-                    <style>
-                        .contact-item { position: relative; display: inline-flex; }
-                        .contact-tooltip {
-                            position: absolute;
-                            left: 50%; transform: translateX(-50%);
-                            bottom: calc(100% + 8px);
-                            background: #1f2937;
-                            color: #fff;
-                            font-size: 11px;
-                            padding: 5px 10px;
-                            border-radius: 7px;
-                            white-space: nowrap;
-                            opacity: 0;
-                            pointer-events: none;
-                            transition: opacity .2s;
-                            z-index: 10;
-                        }
-                        .contact-tooltip::after {
-                            content: '';
-                            position: absolute;
-                            top: 100%; left: 50%; transform: translateX(-50%);
-                            border: 5px solid transparent;
-                            border-top-color: #1f2937;
-                        }
-                        .contact-item:hover .contact-tooltip { opacity: 1; }
-                    </style>
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <!-- Contact Info -->
+          <div class="">
+            <h2
+              class="text-3xl lg:text-4xl font-semibold tracking-tight text-gray-900 mb-4"
+            >
+              <span
+                data-en="Start Your Project Today"
+                data-vi="Bắt Đầu Dự Án Ngay"
+                >Start Your Project Today</span
+              >
+            </h2>
+            <p class="text-base text-gray-500 font-light mb-8 max-w-md">
+              <span
+                data-en="Have an idea? Let's build something great together. Fill out the form or reach out directly."
+                data-vi="Có ý tưởng? Hãy liên hệ với chúng tôi. Điền form hoặc nhắn tin trực tiếp."
+                >Have an idea? Let's build something great together. Fill out
+                the form or reach out directly.</span
+              >
+              <br />
+              <span class="text-sm italic text-gray-400 mt-2 block"
+                >Bắt đầu dự án của bạn ngay hôm nay. Vui lòng để lại thông tin
+                liên hệ.</span
+              >
+            </p>
 
-                    <div class="flex flex-wrap gap-2 pt-2">
-                        <!-- Email -->
-                        <div class="contact-item">
-                            <a href="mailto:sockhanh4425@gmail.com"
-                               class="w-11 h-11 rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center transition-all hover:scale-110 hover:shadow-md">
-                                <iconify-icon icon="logos:google-gmail" class="text-xl"></iconify-icon>
-                            </a>
-                            <span class="contact-tooltip">sockhanh4425@gmail.com</span>
-                        </div>
+            <style>
+              .contact-item {
+                position: relative;
+                display: inline-flex;
+              }
+              .contact-tooltip {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: calc(100% + 8px);
+                background: #1f2937;
+                color: #fff;
+                font-size: 11px;
+                padding: 5px 10px;
+                border-radius: 7px;
+                white-space: nowrap;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.2s;
+                z-index: 10;
+              }
+              .contact-tooltip::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                border: 5px solid transparent;
+                border-top-color: #1f2937;
+              }
+              .contact-item:hover .contact-tooltip {
+                opacity: 1;
+              }
+            </style>
 
-                        <!-- Phone -->
-                        <div class="contact-item">
-                            <a href="tel:+84919797671"
-                               class="w-11 h-11 rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center transition-all hover:scale-110 hover:shadow-md">
-                                <iconify-icon icon="logos:google-maps" class="text-xl"></iconify-icon>
-                            </a>
-                            <span class="contact-tooltip">(+84) 919 797 671</span>
-                        </div>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <!-- Email -->
+              <div class="contact-item">
+                <a
+                  href="mailto:sockhanh4425@gmail.com"
+                  class="w-11 h-11 rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center transition-all hover:scale-110 hover:shadow-md"
+                >
+                  <iconify-icon
+                    icon="logos:google-gmail"
+                    class="text-xl"
+                  ></iconify-icon>
+                </a>
+                <span class="contact-tooltip">sockhanh4425@gmail.com</span>
+              </div>
 
-                        <!-- Facebook -->
-                        <div class="contact-item">
-                            <a href="https://www.facebook.com/nguyen.quoc.khanh.202138/" target="_blank"
-                               class="w-11 h-11 rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center transition-all hover:scale-110 hover:shadow-md">
-                                <iconify-icon icon="logos:facebook" class="text-xl"></iconify-icon>
-                            </a>
-                            <span class="contact-tooltip">Facebook</span>
-                        </div>
+              <!-- Phone -->
+              <div class="contact-item">
+                <a
+                  href="tel:+84919797671"
+                  class="w-11 h-11 rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center transition-all hover:scale-110 hover:shadow-md"
+                >
+                  <iconify-icon
+                    icon="logos:google-maps"
+                    class="text-xl"
+                  ></iconify-icon>
+                </a>
+                <span class="contact-tooltip">(+84) 919 797 671</span>
+              </div>
 
-                        <!-- Zalo -->
-                        <div class="contact-item">
-                            <a href="https://zalo.me/0919797671" target="_blank"
-                               class="w-11 h-11 rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center transition-all hover:scale-110 hover:shadow-md overflow-hidden">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" class="w-6 h-6" alt="Zalo"/>
-                            </a>
-                            <span class="contact-tooltip">Zalo: 0919 797 671</span>
-                        </div>
+              <!-- Facebook -->
+              <div class="contact-item">
+                <a
+                  href="https://www.facebook.com/nguyen.quoc.khanh.202138/"
+                  target="_blank"
+                  class="w-11 h-11 rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center transition-all hover:scale-110 hover:shadow-md"
+                >
+                  <iconify-icon
+                    icon="logos:facebook"
+                    class="text-xl"
+                  ></iconify-icon>
+                </a>
+                <span class="contact-tooltip">Facebook</span>
+              </div>
 
-                        <!-- Telegram -->
-                        <div class="contact-item">
-                            <a href="https://t.me/+84919797671" target="_blank"
-                               class="w-11 h-11 rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center transition-all hover:scale-110 hover:shadow-md">
-                                <iconify-icon icon="logos:telegram" class="text-xl"></iconify-icon>
-                            </a>
-                            <span class="contact-tooltip">Telegram: +84 919 797 671</span>
-                        </div>
+              <!-- Zalo -->
+              <div class="contact-item">
+                <a
+                  href="https://zalo.me/0919797671"
+                  target="_blank"
+                  class="w-11 h-11 rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center transition-all hover:scale-110 hover:shadow-md overflow-hidden"
+                >
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg"
+                    class="w-6 h-6"
+                    alt="Zalo"
+                  />
+                </a>
+                <span class="contact-tooltip">Zalo: 0919 797 671</span>
+              </div>
 
-                        <!-- WhatsApp -->
-                        <div class="contact-item">
-                            <a href="https://wa.me/84919797671" target="_blank"
-                               class="w-11 h-11 rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center transition-all hover:scale-110 hover:shadow-md">
-                                <iconify-icon icon="logos:whatsapp-icon" class="text-xl"></iconify-icon>
-                            </a>
-                            <span class="contact-tooltip">WhatsApp: +84 919 797 671</span>
-                        </div>
+              <!-- Telegram -->
+              <div class="contact-item">
+                <a
+                  href="https://t.me/+84919797671"
+                  target="_blank"
+                  class="w-11 h-11 rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center transition-all hover:scale-110 hover:shadow-md"
+                >
+                  <iconify-icon
+                    icon="logos:telegram"
+                    class="text-xl"
+                  ></iconify-icon>
+                </a>
+                <span class="contact-tooltip">Telegram: +84 919 797 671</span>
+              </div>
 
-                        <!-- Location -->
-                        <div class="contact-item">
-                            <div class="w-11 h-11 rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center cursor-default transition-all hover:scale-110">
-                                <iconify-icon icon="logos:google-maps" class="text-xl"></iconify-icon>
-                            </div>
-                            <span class="contact-tooltip">Ho Chi Minh City, Vietnam</span>
-                        </div>
-                    </div>
+              <!-- WhatsApp -->
+              <div class="contact-item">
+                <a
+                  href="https://wa.me/84919797671"
+                  target="_blank"
+                  class="w-11 h-11 rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center transition-all hover:scale-110 hover:shadow-md"
+                >
+                  <iconify-icon
+                    icon="logos:whatsapp-icon"
+                    class="text-xl"
+                  ></iconify-icon>
+                </a>
+                <span class="contact-tooltip">WhatsApp: +84 919 797 671</span>
+              </div>
+
+              <!-- Location -->
+              <div class="contact-item">
+                <div
+                  class="w-11 h-11 rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center cursor-default transition-all hover:scale-110"
+                >
+                  <iconify-icon
+                    icon="logos:google-maps"
+                    class="text-xl"
+                  ></iconify-icon>
                 </div>
-
-                <!-- Contact Form -->
-                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                    <form id="contactForm" class="space-y-5">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                            <div class="space-y-1.5">
-                                <label class="text-xs font-medium text-gray-700">Name <span class="text-gray-400 font-normal">(Tên)</span></label>
-                                <input type="text" id="nameField" required placeholder="John Doe" class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all placeholder:text-gray-400">
-                            </div>
-                            <div class="space-y-1.5">
-                                <label class="text-xs font-medium text-gray-700">Email</label>
-                                <input type="email" id="emailField" required placeholder="john@example.com" class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all placeholder:text-gray-400">
-                            </div>
-                        </div>
-                        
-                        <div class="space-y-1.5">
-                            <label class="text-xs font-medium text-gray-700">Services interested in</label>
-                            <div class="relative">
-                                <select id="serviceField" class="focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all appearance-none cursor-pointer text-sm text-gray-700 bg-gray-50 w-full border-gray-200 border rounded-lg pt-2.5 pr-4 pb-2.5 pl-4">
-                                    <option>Website Design</option>
-                                    <option>UI/UX Design</option>
-                                    <option>Full-stack Development</option>
-                                    <option>Other</option>
-                                </select>
-                                <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400">
-                                    <iconify-icon icon="solar:alt-arrow-down-linear"></iconify-icon>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="space-y-1.5">
-                            <label class="text-xs font-medium text-gray-700">Message <span class="text-gray-400 font-normal">(Tin nhắn)</span></label>
-                            <textarea rows="4" id="messageField" placeholder="Tell us about your project..." class="focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all placeholder:text-gray-400 resize-none text-sm bg-gray-50 w-full border-gray-200 border rounded-lg pt-3 pr-4 pb-3 pl-4"></textarea>
-                        </div>
-                        
-                        <div class="flex items-start gap-2 pt-1">
-                            <div class="relative flex items-center justify-center w-4 h-4 mt-0.5">
-                                <input type="checkbox" id="agreeCheck" class="peer appearance-none w-4 h-4 border border-gray-300 rounded bg-white checked:bg-gray-900 checked:border-gray-900 cursor-pointer transition-colors">
-                                <iconify-icon icon="solar:check-read-linear" class="absolute text-white text-xs opacity-0 peer-checked:opacity-100 pointer-events-none"></iconify-icon>
-                            </div>
-                            <label class="text-xs text-gray-500 font-light select-none cursor-pointer">
-                                I agree to the privacy policy.
-                            </label>
-                        </div>
-
-                        <!-- Success message (hidden by default) -->
-                        <div id="successMsg" class="hidden bg-green-50 border border-green-200 rounded-xl p-4 text-center">
-                            <div class="text-2xl mb-2">🎉</div>
-                            <p class="text-sm font-medium text-green-800">Message sent! We'll get back to you within 24 hours.</p>
-                            <p class="text-xs text-green-600 mt-1">Chúng tôi sẽ phản hồi trong vòng 24 giờ.</p>
-                        </div>
-
-                        <button type="button" id="submitBtn" onclick="submitToGoogleForms()" class="w-full px-6 py-3 text-sm font-medium text-white bg-gray-900 rounded-xl hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 mt-2">
-                            <span id="btnText" data-en="Send Message" data-vi="Gửi tin nhắn">Send Message</span>
-                            <iconify-icon icon="solar:plain-linear"></iconify-icon>
-                        </button>
-                    </form>
-                </div>
-
-                <script>
-                function submitToGoogleForms() {
-                    const name = document.getElementById('nameField').value.trim();
-                    const email = document.getElementById('emailField').value.trim();
-                    const service = document.getElementById('serviceField').value;
-                    const message = document.getElementById('messageField').value.trim();
-                    const agreed = document.getElementById('agreeCheck').checked;
-
-                    if (!name || !email) {
-                        alert('Please fill in your name and email.');
-                        return;
-                    }
-                    if (!agreed) {
-                        alert('Please agree to the privacy policy.');
-                        return;
-                    }
-
-                    const btn = document.getElementById('submitBtn');
-                    const btnText = document.getElementById('btnText');
-                    btn.disabled = true;
-                    btnText.textContent = 'Sending...';
-
-                    const FORM_ID = '1FAIpQLSfk5RnM5GNLNg5DJGP2BkNtAgrEq7xQZymRa39Z9gsXZ65_Xg';
-                    const url = 'https://docs.google.com/forms/d/e/' + FORM_ID + '/formResponse';
-
-                    const formData = new FormData();
-                    formData.append('entry.2105922904', name);
-                    formData.append('entry.1526710477', email);
-                    formData.append('entry.1357417742', service);
-                    formData.append('entry.2045298644', message);
-
-                    fetch(url, {
-                        method: 'POST',
-                        mode: 'no-cors',
-                        body: formData
-                    }).then(() => {
-                        document.getElementById('contactForm').reset();
-                        document.getElementById('successMsg').classList.remove('hidden');
-                        btn.disabled = false;
-                        btnText.textContent = 'Send Message';
-                    }).catch(() => {
-                        document.getElementById('successMsg').classList.remove('hidden');
-                        btn.disabled = false;
-                        btnText.textContent = 'Send Message';
-                    });
-                }
-                </script>
+                <span class="contact-tooltip">Ho Chi Minh City, Vietnam</span>
+              </div>
             </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div
+            class="bg-white p-8 rounded-3xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)]"
+          >
+            <form id="contactForm" class="space-y-5">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div class="space-y-1.5">
+                  <label class="text-xs font-medium text-gray-700"
+                    >Name
+                    <span class="text-gray-400 font-normal">(Tên)</span></label
+                  >
+                  <input
+                    type="text"
+                    id="nameField"
+                    required
+                    placeholder="John Doe"
+                    class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all placeholder:text-gray-400"
+                  />
+                </div>
+                <div class="space-y-1.5">
+                  <label class="text-xs font-medium text-gray-700">Email</label>
+                  <input
+                    type="email"
+                    id="emailField"
+                    required
+                    placeholder="john@example.com"
+                    class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all placeholder:text-gray-400"
+                  />
+                </div>
+              </div>
+
+              <div class="space-y-1.5">
+                <label class="text-xs font-medium text-gray-700"
+                  >Services interested in</label
+                >
+                <div class="relative">
+                  <select
+                    id="serviceField"
+                    class="focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all appearance-none cursor-pointer text-sm text-gray-700 bg-gray-50 w-full border-gray-200 border rounded-lg pt-2.5 pr-4 pb-2.5 pl-4"
+                  >
+                    <option>Website Design</option>
+                    <option>UI/UX Design</option>
+                    <option>Full-stack Development</option>
+                    <option>Other</option>
+                  </select>
+                  <div
+                    class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400"
+                  >
+                    <iconify-icon
+                      icon="solar:alt-arrow-down-linear"
+                    ></iconify-icon>
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-1.5">
+                <label class="text-xs font-medium text-gray-700"
+                  >Message
+                  <span class="text-gray-400 font-normal"
+                    >(Tin nhắn)</span
+                  ></label
+                >
+                <textarea
+                  rows="4"
+                  id="messageField"
+                  placeholder="Tell us about your project..."
+                  class="focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all placeholder:text-gray-400 resize-none text-sm bg-gray-50 w-full border-gray-200 border rounded-lg pt-3 pr-4 pb-3 pl-4"
+                ></textarea>
+              </div>
+
+              <div class="flex items-start gap-2 pt-1">
+                <div
+                  class="relative flex items-center justify-center w-4 h-4 mt-0.5"
+                >
+                  <input
+                    type="checkbox"
+                    id="agreeCheck"
+                    class="peer appearance-none w-4 h-4 border border-gray-300 rounded bg-white checked:bg-gray-900 checked:border-gray-900 cursor-pointer transition-colors"
+                  />
+                  <iconify-icon
+                    icon="solar:check-read-linear"
+                    class="absolute text-white text-xs opacity-0 peer-checked:opacity-100 pointer-events-none"
+                  ></iconify-icon>
+                </div>
+                <label
+                  class="text-xs text-gray-500 font-light select-none cursor-pointer"
+                >
+                  I agree to the privacy policy.
+                </label>
+              </div>
+
+              <!-- Success message (hidden by default) -->
+              <div
+                id="successMsg"
+                class="hidden bg-green-50 border border-green-200 rounded-xl p-4 text-center"
+              >
+                <div class="text-2xl mb-2">🎉</div>
+                <p class="text-sm font-medium text-green-800">
+                  Message sent! We'll get back to you within 24 hours.
+                </p>
+                <p class="text-xs text-green-600 mt-1">
+                  Chúng tôi sẽ phản hồi trong vòng 24 giờ.
+                </p>
+              </div>
+
+              <button
+                type="button"
+                id="submitBtn"
+                onclick="submitToGoogleForms()"
+                class="w-full px-6 py-3 text-sm font-medium text-white bg-gray-900 rounded-xl hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 mt-2"
+              >
+                <span id="btnText" data-en="Send Message" data-vi="Gửi tin nhắn"
+                  >Send Message</span
+                >
+                <iconify-icon icon="solar:plain-linear"></iconify-icon>
+              </button>
+            </form>
+          </div>
+
+          <script>
+            function submitToGoogleForms() {
+              const name = document.getElementById("nameField").value.trim();
+              const email = document.getElementById("emailField").value.trim();
+              const service = document.getElementById("serviceField").value;
+              const message = document
+                .getElementById("messageField")
+                .value.trim();
+              const agreed = document.getElementById("agreeCheck").checked;
+
+              if (!name || !email) {
+                alert("Please fill in your name and email.");
+                return;
+              }
+              if (!agreed) {
+                alert("Please agree to the privacy policy.");
+                return;
+              }
+
+              const btn = document.getElementById("submitBtn");
+              const btnText = document.getElementById("btnText");
+              btn.disabled = true;
+              btnText.textContent = "Sending...";
+
+              const FORM_ID =
+                "1FAIpQLSfk5RnM5GNLNg5DJGP2BkNtAgrEq7xQZymRa39Z9gsXZ65_Xg";
+              const url =
+                "https://docs.google.com/forms/d/e/" +
+                FORM_ID +
+                "/formResponse";
+
+              const formData = new FormData();
+              formData.append("entry.2105922904", name);
+              formData.append("entry.1526710477", email);
+              formData.append("entry.1357417742", service);
+              formData.append("entry.2045298644", message);
+
+              fetch(url, {
+                method: "POST",
+                mode: "no-cors",
+                body: formData,
+              })
+                .then(() => {
+                  document.getElementById("contactForm").reset();
+                  document
+                    .getElementById("successMsg")
+                    .classList.remove("hidden");
+                  btn.disabled = false;
+                  btnText.textContent = "Send Message";
+                })
+                .catch(() => {
+                  document
+                    .getElementById("successMsg")
+                    .classList.remove("hidden");
+                  btn.disabled = false;
+                  btnText.textContent = "Send Message";
+                });
+            }
+          </script>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="py-10 border-t border-gray-100 bg-white">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="flex items-center gap-2">
-                <div class="w-6 h-6 bg-blue-600 rounded flex items-center justify-center text-white font-semibold tracking-tighter text-[10px]">W✦</div>
-                <span class="font-medium tracking-tight text-sm text-gray-900">WebCraft Studio.</span>
-            </div>
-            
-            <p class="text-xs text-gray-500 font-light">
-                © 2023 WebCraft Studio. All rights reserved.
-            </p>
-            
-            <div class="flex items-center gap-4 text-gray-400">
-                <a href="#" class="hover:text-gray-900 transition-colors"><iconify-icon icon="solar:figma-linear" class="text-lg"></iconify-icon></a>
-                <a href="#" class="hover:text-gray-900 transition-colors"><iconify-icon icon="solar:github-linear" class="text-lg"></iconify-icon></a>
-                <a href="#" class="hover:text-gray-900 transition-colors"><iconify-icon icon="solar:dribbble-linear" class="text-lg"></iconify-icon></a>
-            </div>
+      <div
+        class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6"
+      >
+        <div class="flex items-center gap-2">
+          <div
+            class="w-6 h-6 bg-blue-600 rounded flex items-center justify-center text-white font-semibold tracking-tighter text-[10px]"
+          >
+            W✦
+          </div>
+          <span class="font-medium tracking-tight text-sm text-gray-900"
+            >WebCraft Studio.</span
+          >
         </div>
+
+        <p class="text-xs text-gray-500 font-light">
+          © 2023 WebCraft Studio. All rights reserved.
+        </p>
+
+        <div class="flex items-center gap-4 text-gray-400">
+          <a href="#" class="hover:text-gray-900 transition-colors"
+            ><iconify-icon
+              icon="solar:figma-linear"
+              class="text-lg"
+            ></iconify-icon
+          ></a>
+          <a href="#" class="hover:text-gray-900 transition-colors"
+            ><iconify-icon
+              icon="solar:github-linear"
+              class="text-lg"
+            ></iconify-icon
+          ></a>
+          <a href="#" class="hover:text-gray-900 transition-colors"
+            ><iconify-icon
+              icon="solar:dribbble-linear"
+              class="text-lg"
+            ></iconify-icon
+          ></a>
+        </div>
+      </div>
     </footer>
 
-    <!-- Chat Widget Visual Placeholder -->
-    <div class="fixed bottom-6 right-6 w-12 h-12 bg-blue-600 rounded-full shadow-lg shadow-blue-600/20 flex items-center justify-center text-white cursor-pointer hover:bg-blue-700 hover:scale
-    </div>
-
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { darkMode: 'class' }</script>
-
     <script>
-    // ===== DARK MODE =====
-    function toggleTheme() {
-        const html = document.documentElement;
-        const isDark = html.classList.toggle('dark');
-        document.getElementById('theme-icon').setAttribute('icon', isDark ? 'solar:moon-linear' : 'solar:sun-linear');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    }
-
-    // ===== LANGUAGE =====
-    function setLang(lang) {
-        const activeClass = 'px-3 py-1 rounded-full bg-white shadow-sm text-xs font-medium text-gray-900 transition-all';
-        const inactiveClass = 'px-3 py-1 rounded-full text-xs font-medium text-gray-500 hover:text-gray-900 transition-all';
-        document.getElementById('btn-en').className = lang === 'en' ? activeClass : inactiveClass;
-        document.getElementById('btn-vi').className = lang === 'vi' ? activeClass : inactiveClass;
-        document.querySelectorAll('[data-en][data-vi]').forEach(el => {
-            el.textContent = lang === 'vi' ? el.getAttribute('data-vi') : el.getAttribute('data-en');
-        });
-        localStorage.setItem('lang', lang);
-    }
-
-    // ===== INIT =====
-    (function() {
-        if (localStorage.getItem('theme') === 'dark') {
-            document.documentElement.classList.add('dark');
-            const icon = document.getElementById('theme-icon');
-            if (icon) icon.setAttribute('icon', 'solar:moon-linear');
-        }
-        if (localStorage.getItem('lang') === 'vi') setLang('vi');
-    })();
+      tailwind.config = { darkMode: "class" };
     </script>
 
-</body>
+    <script>
+      // ===== DARK MODE =====
+      function toggleTheme() {
+        const html = document.documentElement;
+        const isDark = html.classList.toggle("dark");
+        document
+          .getElementById("theme-icon")
+          .setAttribute(
+            "icon",
+            isDark ? "solar:moon-linear" : "solar:sun-linear",
+          );
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+      }
+
+      // ===== LANGUAGE =====
+      function setLang(lang) {
+        const activeClass =
+          "px-3 py-1 rounded-full bg-white shadow-sm text-xs font-medium text-gray-900 transition-all";
+        const inactiveClass =
+          "px-3 py-1 rounded-full text-xs font-medium text-gray-500 hover:text-gray-900 transition-all";
+        document.getElementById("btn-en").className =
+          lang === "en" ? activeClass : inactiveClass;
+        document.getElementById("btn-vi").className =
+          lang === "vi" ? activeClass : inactiveClass;
+        document.querySelectorAll("[data-en][data-vi]").forEach((el) => {
+          el.textContent =
+            lang === "vi"
+              ? el.getAttribute("data-vi")
+              : el.getAttribute("data-en");
+        });
+        localStorage.setItem("lang", lang);
+      }
+
+      // ===== INIT =====
+      (function () {
+        if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.classList.add("dark");
+          const icon = document.getElementById("theme-icon");
+          if (icon) icon.setAttribute("icon", "solar:moon-linear");
+        }
+        if (localStorage.getItem("lang") === "vi") setLang("vi");
+      })();
+    </script>
+  </body>
 </html>
